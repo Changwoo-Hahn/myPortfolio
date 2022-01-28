@@ -27,7 +27,7 @@ export function setupCactus() {
   cactusFrame = 0;
   yVelocity = 0;
   attackSpeed = 420;
-  cactusElem.src = "../dino2.0/imgs/cactus-stationary-1.png";
+  cactusElem.src = "../dino2/imgs/cactus-stationary-1.png";
 
   setCustomProperty(cactusElem, "--bottom", 0);
   setCustomProperty(cactusColCenElem, "--bottom", 0);
@@ -55,21 +55,21 @@ export function getCactusRect(i) {
 }
 
 export function setCactusLose() {
-  cactusElem.src = "../dino2.0/imgs/cactus-gameover.png";
+  cactusElem.src = "../dino2/imgs/cactus-gameover.png";
 }
 
 function handleRun(delta, speedScale) {
   if (isJumping) {
-    cactusElem.src = `../dino2.0/imgs/cactus-stationary-1.png`; //점프시 애니메이션 프레임
+    cactusElem.src = `../dino2/imgs/cactus-stationary-1.png`; //점프시 애니메이션 프레임
     return;
   }
   if (isAttacking) {
-    cactusElem.src = "../dino2.0/imgs/cactus-attack.png";
+    cactusElem.src = "../dino2/imgs/cactus-attack.png";
     return;
   }
   if (currentFrameTime >= FRAME_TIME) {
     cactusFrame = (cactusFrame + 1) % CACTUS_FRAME_COUNT; //1,2 를 반복하게 됨 DINO_FRAME_COUNT값에 따라 프레임수 증가 가능
-    cactusElem.src = `../dino2.0/imgs/cactus-run-${cactusFrame}.png`;
+    cactusElem.src = `../dino2/imgs/cactus-run-${cactusFrame}.png`;
     currentFrameTime -= FRAME_TIME;
   }
   currentFrameTime += delta * speedScale; //애니메이션을 점점 빠르게

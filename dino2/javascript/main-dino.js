@@ -90,14 +90,14 @@ function setTutorial(e) {
       const attackEvent = (e) => {
         if (e.code == "KeyA" && jumpTutorial) {
           document.removeEventListener("keydown", attackEvent);
-          cactusElem.src = "../dino2.0/imgs/cactus-attack.png";
+          cactusElem.src = "../dino2/imgs/cactus-attack.png";
           attackTutorial = true;
 
           startAttackScreenElem.classList.add("hide"); //remove text
 
           removeTutoDino();
           setTimeout(() => {
-            cactusElem.src = "../dino2.0/imgs/cactus-stationary-1.png";
+            cactusElem.src = "../dino2/imgs/cactus-stationary-1.png";
             cactusElem.classList.add("cactus-tuto-end");
 
             setTimeout(() => {

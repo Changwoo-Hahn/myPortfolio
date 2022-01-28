@@ -31,7 +31,7 @@ export function updateFire(delta, speedScale) {
   if (fireCurrentFrameTime >= FIRE_FRAME_TIME && fireElem != null) {
     document.querySelectorAll("[data-fire]").forEach((fire) => {
       fireFrame = (fireFrame + 1) % FIRE_FRAME_COUNT;
-      fire.src = `../dino2.0/imgs/fire-${fireFrame}.png`; //fireElem
+      fire.src = `../dino2/imgs/fire-${fireFrame}.png`; //fireElem
       fireCurrentFrameTime -= FIRE_FRAME_TIME;
     });
   }
@@ -42,7 +42,7 @@ export function createFire() {
   const fire = document.createElement("img");
 
   fire.dataset.fire = true;
-  fire.src = "../dino2.0/imgs/fire-0.png";
+  fire.src = "../dino2/imgs/fire-0.png";
   fire.classList.add("fire");
   setCustomProperty(fire, "--right", 100);
   worldElem.append(fire);

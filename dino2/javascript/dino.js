@@ -76,7 +76,7 @@ export function setTutoDino() {
   const dino = document.createElement("img"); //html div 추가
 
   dino.dataset.dino = true; //document.querySelectorAll("[data-dino]");를 가능하게 해줌
-  dino.src = "../dino2.0/imgs/dino-stationary.png";
+  dino.src = "../dino2/imgs/dino-stationary.png";
   dino.classList.add("dino-tutorial"); //Dino 클래스 추가
 
   worldElem.append(dino);
@@ -91,7 +91,7 @@ export function createDino() {
   const dino = document.createElement("img"); //html div 추가
 
   dino.dataset.dino = true; //document.querySelectorAll("[data-dino]");를 가능하게 해줌
-  dino.src = "../dino2.0/imgs/dino-stationary.png";
+  dino.src = "../dino2/imgs/dino-stationary.png";
   dino.classList.add("dino"); //Dino 클래스 추가
   setCustomProperty(dino, "--right", 100); //100%
   worldElem.append(dino);
