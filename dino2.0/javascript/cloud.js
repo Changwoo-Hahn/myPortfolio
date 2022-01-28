@@ -9,7 +9,7 @@ export function createClouds() {
 
   if (currentCloud < 7 && currentCloud == pastCloud) {
     cloudElem.dataset.cloud = true;
-    cloudElem.src = "/dino2.0/imgs/cloud.png";
+    cloudElem.src = "https://../dino2.0/imgs/cloud.png";
     cloudElem.classList.add("cloud");
     setCustomProperty(cloudElem, "--top", randomBetween(5, 65));
     worldElem.append(cloudElem);
