@@ -46,7 +46,7 @@ function dinoPattern() {
   const dino = document.createElement("img"); //html div 추가
 
   dino.dataset.dino = true; //document.querySelectorAll("[data-dino]");를 가능하게 해줌
-  dino.src = "../dino2/imgs/dino-stationary.png";
+  dino.src = "./dino2/imgs/dino-stationary.png";
   dino.classList.add("dino"); //Dino 클래스 추가
   setCustomProperty(dino, "--right", 100); //100%
   worldElem.append(dino);
@@ -55,7 +55,7 @@ function firePattern() {
   const fire = document.createElement("img");
 
   fire.dataset.fire = true;
-  fire.src = "../dino2/imgs/fire-0.png";
+  fire.src = "./dino2/imgs/fire-0.png";
   fire.classList.add("fire");
   setCustomProperty(fire, "--right", 100);
   worldElem.append(fire);

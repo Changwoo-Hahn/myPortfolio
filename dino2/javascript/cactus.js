@@ -60,11 +60,11 @@ export function setCactusLose() {
 
 function handleRun(delta, speedScale) {
   if (isJumping) {
-    cactusElem.src = `../dino2/imgs/cactus-stationary-1.png`; //점프시 애니메이션 프레임
+    cactusElem.src = `./dino2/imgs/cactus-stationary-1.png`; //점프시 애니메이션 프레임
     return;
   }
   if (isAttacking) {
-    cactusElem.src = "../dino2/imgs/cactus-attack.png";
+    cactusElem.src = "./dino2/imgs/cactus-attack.png";
     return;
   }
   if (currentFrameTime >= FRAME_TIME) {
