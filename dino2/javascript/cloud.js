@@ -18,7 +18,6 @@ export function createClouds() {
     //worldElem.appendChild(cloudElem); //append
     worldElem.appendChild(cloudElem);
     currentCloud += 1;
-    console.log("cloud");
   }
   if (currentCloud > pastCloud) {
     setTimeout(() => {
