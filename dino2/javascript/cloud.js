@@ -16,7 +16,7 @@ export function createClouds() {
     cloudElem.classList.add("cloud");
     setCustomProperty(cloudElem, "--top", randomBetween(5, 65));
     //worldElem.appendChild(cloudElem); //append
-    worldElem.append(cloudElem);
+    worldElem.appendChild(cloudElem);
     currentCloud += 1;
     console.log("cloud");
   }
