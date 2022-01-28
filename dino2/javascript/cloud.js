@@ -12,7 +12,7 @@ export function createClouds() {
     // cloudElem.onload = function () {
 
     // };
-    cloudElem.src = "dino2/imgs/cloud.png";
+    cloudElem.src = "./dino2/imgs/cloud.png";
     cloudElem.classList.add("cloud");
     setCustomProperty(cloudElem, "--top", randomBetween(5, 65));
     //worldElem.appendChild(cloudElem); //append
