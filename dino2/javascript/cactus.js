@@ -27,7 +27,7 @@ export function setupCactus() {
   cactusFrame = 0;
   yVelocity = 0;
   attackSpeed = 420;
-  cactusElem.src = "../dino2/imgs/cactus-stationary-1.png";
+  cactusElem.src = "./dino2/imgs/cactus-stationary-1.png";
 
   setCustomProperty(cactusElem, "--bottom", 0);
   setCustomProperty(cactusColCenElem, "--bottom", 0);
@@ -55,7 +55,7 @@ export function getCactusRect(i) {
 }
 
 export function setCactusLose() {
-  cactusElem.src = "../dino2/imgs/cactus-gameover.png";
+  cactusElem.src = "./dino2/imgs/cactus-gameover.png";
 }
 
 function handleRun(delta, speedScale) {
