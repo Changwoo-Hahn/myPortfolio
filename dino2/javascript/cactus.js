@@ -69,7 +69,7 @@ function handleRun(delta, speedScale) {
   }
   if (currentFrameTime >= FRAME_TIME) {
     cactusFrame = (cactusFrame + 1) % CACTUS_FRAME_COUNT; //1,2 를 반복하게 됨 DINO_FRAME_COUNT값에 따라 프레임수 증가 가능
-    cactusElem.src = `../dino2/imgs/cactus-run-${cactusFrame}.png`;
+    cactusElem.src = `./dino2/imgs/cactus-run-${cactusFrame}.png`;
     currentFrameTime -= FRAME_TIME;
   }
   currentFrameTime += delta * speedScale; //애니메이션을 점점 빠르게
