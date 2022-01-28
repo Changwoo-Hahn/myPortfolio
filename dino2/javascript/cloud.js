@@ -8,10 +8,11 @@ export function createClouds() {
   const worldElem = document.querySelector("[data-world]");
 
   if (currentCloud < 7 && currentCloud == pastCloud) {
-    cloudElem.dataset.cloud = true;
-    cloudElem.onload = function () {
+    cloudElem.onload = () => {
       worldElem.append(cloudElem);
     };
+    cloudElem.dataset.cloud = true;
+
     cloudElem.src = "../dino2/imgs/cloud.png";
     cloudElem.classList.add("cloud");
     setCustomProperty(cloudElem, "--top", randomBetween(5, 65));
