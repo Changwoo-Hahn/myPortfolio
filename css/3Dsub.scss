@@ -1,0 +1,225 @@
+:root {
+  --asideWidth: 380px;
+}
+section {
+  position: relative;
+
+  margin: 0 3px;
+  margin-top: 0.2em;
+}
+aside,
+.article {
+  box-sizing: border-box;
+}
+.article {
+  padding-left: 0.2em;
+  position: absolute;
+
+  left: 0;
+  right: var(--asideWidth);
+  //height: 100%;
+  min-width: 600px;
+  .go-to-top {
+    border-top: 1px solid black;
+    //border-bottom: 1px solid rgb(0, 0, 0);
+    //outline: 1px solid black;
+    position: relative;
+    display: block;
+    //clear: both;
+    margin: 0;
+    margin-top: 1em;
+    text-align: center;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .empty {
+    margin: 0;
+    height: 0.5em;
+  }
+  div {
+    margin-top: 0.1em;
+    bottom: 0%;
+  }
+}
+.go-to-top:hover {
+  background-color: var(--primary-yellow);
+  cursor: pointer;
+}
+aside {
+  h1 {
+    //border: 1px solid blue;
+    margin-top: 0;
+    margin-bottom: -0.5em;
+    font-size: 1.5em;
+    font-weight: 400;
+  }
+  position: fixed;
+  //float: right;
+  margin-right: 0.1em;
+  padding: 1em;
+  padding-left: 0.5em;
+  padding-top: 0;
+  text-align: justify;
+
+  width: var(--asideWidth);
+  height: 100%;
+  font-size: 0.85em;
+  right: 0;
+  overflow-x: hidden;
+  .award {
+    //position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.image-container {
+  position: relative;
+  //border: 2px solid pink;
+  min-width: 16px;
+  min-height: 9px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5em;
+  img {
+    width: auto;
+    height: 100%;
+
+    object-fit: cover;
+  }
+}
+.portrait {
+  position: relative;
+  //border: 2px solid rgb(233, 0, 39);
+  min-width: 9 px;
+  min-height: 16px;
+  //aspect-ratio: 9/16;
+  width: 100%;
+  height: auto;
+  margin-right: var(--asideWidth);
+  align-items: center;
+  display: flex;
+
+  margin-bottom: 0.5em;
+
+  img {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    //max-height: 800px;
+
+    //display: inline-flex;
+  }
+}
+.half {
+  justify-content: center;
+  width: 100%;
+  //max-width: 45%;
+  object-fit: scale-down;
+  img {
+    max-width: 50%;
+  }
+}
+
+.softwares-title {
+  font-weight: 400;
+  margin-bottom: -0.8em;
+}
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  margin: 1em 0em;
+  //border: 1px solid red;
+}
+.software {
+  //border: 1px solid darkgray;
+  margin: 0.35em 0;
+
+  span::before {
+    //icon
+    content: "";
+    float: left;
+    margin-right: 0.01em;
+    margin-top: -0.035em;
+    height: 23px;
+    width: 30px;
+
+    background-size: 23px 23px;
+    background-repeat: no-repeat;
+  }
+}
+span.zbrush::before {
+  background-image: url("../images/icons/zbrush-icon.png");
+}
+span.max::before {
+  background-image: url("../images/icons/3dsMax-icon.png");
+}
+span.maya::before {
+  background-image: url("../images/icons/maya-icon.png");
+}
+span.arnold::before {
+  background-image: url("../images/icons/arnold-icon.png");
+}
+span.substancePainter::before {
+  background-image: url("../images/icons/substancePainter-icon.png");
+}
+span.photoshop::before {
+  background-image: url("../images/icons/photoshop-icon.png");
+}
+@media only screen and (max-width: 986px) {
+  aside {
+    float: none;
+    width: 100%;
+    padding: 0.3em;
+    padding-right: 1.2em;
+    position: relative;
+    .go-to-top {
+      border-top: 1px solid black;
+      //border-bottom: 1px solid rgb(0, 0, 0);
+      //outline: 1px solid black;
+      position: relative;
+      display: block;
+      clear: both;
+      margin: 0;
+      margin-top: 1.6em;
+      text-align: center;
+      div {
+        padding-top: 2px;
+      }
+    }
+    .empty {
+      margin: 0;
+      height: 0.5em;
+    }
+  }
+  .article {
+    position: relative;
+    width: 100%;
+    padding-right: 0.65em;
+    margin-right: 5em;
+  }
+  .portrait {
+    position: relative;
+    //border: 2px solid pink;
+    min-width: 16px;
+    min-height: 9px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5em;
+  }
+}

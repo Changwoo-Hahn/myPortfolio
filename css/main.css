@@ -1,0 +1,173 @@
+:root {
+  --primary-color: rgb(255, 38, 0);
+  --background-color: rgb(255, 248, 223);
+  --primary-yellow: rgb(255, 221, 71);
+  --time-translateX: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background-color);
+  font-family: "Aleo", serif;
+  font-size: 1.3em;
+  font-weight: 300;
+  overflow: overlay;
+}
+
+header.time-header {
+  overflow: hidden;
+  background: var(--primary-color);
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+header.time-header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+  z-index: 2;
+}
+
+header.time-header .container .time-block {
+  height: 4em;
+  width: 1240px;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: 20s linear 0s infinite normal none;
+          animation: 20s linear 0s infinite normal none;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-name: timeAnimation;
+          animation-name: timeAnimation;
+}
+
+header.time-header .container .time-block p {
+  margin-left: 10px;
+}
+
+header.time-header .container .time-block p span {
+  font-family: "Poppins", sans-serif;
+  font-size: 4em;
+  font-weight: 800;
+}
+
+#current-time4 {
+  display: none;
+}
+
+@-webkit-keyframes timeAnimation {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  100% {
+    -webkit-transform: translateX(var(--time-translateX));
+            transform: translateX(var(--time-translateX));
+  }
+}
+
+@keyframes timeAnimation {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  100% {
+    -webkit-transform: translateX(var(--time-translateX));
+            transform: translateX(var(--time-translateX));
+  }
+}
+
+@media screen and (min-width: 2200px) {
+  #current-time4 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.info-color-block {
+  background: #ffdd47;
+}
+
+span.current-page {
+  border-bottom: 1.1px solid;
+}
+
+.info-block {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 1.6em;
+  overflow: hidden;
+  border-color: black;
+  border-top: 1px solid;
+  gap: 3.5em;
+}
+
+.info-block p {
+  display: block;
+  line-height: 1.6em;
+  text-align: center;
+  text-decoration: none;
+  margin: 0;
+}
+
+.email {
+  line-height: 1.6em;
+  color: black;
+  text-decoration: none;
+}
+
+.nav-bar {
+  width: auto;
+  height: 1.6em;
+}
+
+.nav-bar ul {
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  gap: 2em;
+}
+
+.nav-bar li {
+  line-height: 1.6em;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-bar .nav-text-color-3D {
+  color: black;
+}
+
+section.dino-game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2%;
+}
+/*# sourceMappingURL=main.css.map */

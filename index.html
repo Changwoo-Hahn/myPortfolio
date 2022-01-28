@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is Changwoo's Portfolio Site." />
+    <meta name="keywords" content="Portfolio,3D,HTML,CSS,Shader" />
+    <title>Changwoo's Portfolio</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="dino2.0/css/main-dino.css" />
+    <script async src="js/main.js"></script>
+    <script async src="dino2.0/javascript/main-dino.js" type="module"></script>
+    <!-- link css -->
+  </head>
+
+  <body>
+    <header class="time-header">
+      <div class="container">
+        <div class="time-block">
+          <p class="time-text"><span id="current-time1"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time2"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time3"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time4"></span></p>
+        </div>
+      </div>
+    </header>
+
+    <div class="info-color-block">
+      <div class="info-block">
+        <p class="pName">Changwoo Hahn</p>
+        <a class="email" href="mailto: hancw95@gmail.com">hancw95@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <nav class="nav-bar">
+        <ul>
+          <li>
+            <a href="#"><span class="current-page">Home</span></a>
+          </li>
+          <li><a href="pages/3DPage.html">3D</a></li>
+          <li><a href="pages/Game.html">Game</a></li>
+          <li><a href="pages/Shader.html">Shader</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </div>
+    <section class="dino-game">
+      <div class="world" data-world>
+        <div class="score" data-score>0</div>
+        <div class="highestScore" data-highest-score>0</div>
+        <div class="title" data-title>DINO 2.0</div>
+        <div class="start-screen" data-start-screen>Press "Space" To Jump</div>
+        <div class="start-attack hide" data-start-attack-screen>
+          Press "A" To Attack
+        </div>
+        <img src="dino2.0/imgs/ground.png" class="ground" data-ground />
+        <img src="dino2.0/imgs/ground.png" class="ground" data-ground />
+        <img
+          src="dino2.0/imgs/cactus-stationary-1.png"
+          class="cactus hide"
+          data-cactus
+        />
+        <img
+          src="dino2.0/imgs/collider-center.png"
+          class="cactus-col-center"
+          data-cactus-col-center
+        />
+        <img
+          src="dino2.0/imgs/collider-side.png"
+          class="cactus-col-side"
+          data-cactus-col-left
+        />
+        <img
+          src="dino2.0/imgs/collider-side.png"
+          class="cactus-col-side-back"
+          data-cactus-col-right
+        />
+        <img
+          src="dino2.0/imgs/dino-stationary.png"
+          class="dino-tutorial"
+          data-dino
+        />
+        <img
+          src="dino2.0/imgs/cactus-stationary-0.png"
+          class="cactus-tutorial"
+          data-cactus-tuto
+        />
+      </div>
+    </section>
+  </body>
+</html>

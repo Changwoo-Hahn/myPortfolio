@@ -1,0 +1,249 @@
+:root {
+  --asideWidth: 380px;
+}
+
+section {
+  position: relative;
+  margin: 0 3px;
+  margin-top: 0.2em;
+}
+
+aside,
+.article {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.article {
+  padding-left: 0.2em;
+  position: absolute;
+  left: 0;
+  right: var(--asideWidth);
+  min-width: 600px;
+}
+
+.article .go-to-top {
+  border-top: 1px solid black;
+  position: relative;
+  display: block;
+  margin: 0;
+  margin-top: 1em;
+  text-align: center;
+}
+
+.article .go-to-top a {
+  text-decoration: none;
+  color: black;
+}
+
+.article .empty {
+  margin: 0;
+  height: 0.5em;
+}
+
+.article div {
+  margin-top: 0.1em;
+  bottom: 0%;
+}
+
+.go-to-top:hover {
+  background-color: var(--primary-yellow);
+  cursor: pointer;
+}
+
+aside {
+  position: fixed;
+  margin-right: 0.1em;
+  padding: 1em;
+  padding-left: 0.5em;
+  padding-top: 0;
+  text-align: justify;
+  width: var(--asideWidth);
+  height: 100%;
+  font-size: 0.85em;
+  right: 0;
+  overflow-x: hidden;
+}
+
+aside h1 {
+  margin-top: 0;
+  margin-bottom: -0.5em;
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+aside .award {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 120px;
+  height: 120px;
+}
+
+.image-container {
+  position: relative;
+  min-width: 16px;
+  min-height: 9px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 0.5em;
+}
+
+.image-container img {
+  width: auto;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.portrait {
+  position: relative;
+  min-width: 9 px;
+  min-height: 16px;
+  width: 100%;
+  height: auto;
+  margin-right: var(--asideWidth);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0.5em;
+}
+
+.portrait img {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.half {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+.half img {
+  max-width: 50%;
+}
+
+.softwares-title {
+  font-weight: 400;
+  margin-bottom: -0.8em;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1em 0em;
+}
+
+.software {
+  margin: 0.35em 0;
+}
+
+.software span::before {
+  content: "";
+  float: left;
+  margin-right: 0.01em;
+  margin-top: -0.035em;
+  height: 23px;
+  width: 30px;
+  background-size: 23px 23px;
+  background-repeat: no-repeat;
+}
+
+span.zbrush::before {
+  background-image: url("../images/icons/zbrush-icon.png");
+}
+
+span.max::before {
+  background-image: url("../images/icons/3dsMax-icon.png");
+}
+
+span.maya::before {
+  background-image: url("../images/icons/maya-icon.png");
+}
+
+span.arnold::before {
+  background-image: url("../images/icons/arnold-icon.png");
+}
+
+span.substancePainter::before {
+  background-image: url("../images/icons/substancePainter-icon.png");
+}
+
+span.photoshop::before {
+  background-image: url("../images/icons/photoshop-icon.png");
+}
+
+@media only screen and (max-width: 986px) {
+  aside {
+    float: none;
+    width: 100%;
+    padding: 0.3em;
+    padding-right: 1.2em;
+    position: relative;
+  }
+  aside .go-to-top {
+    border-top: 1px solid black;
+    position: relative;
+    display: block;
+    clear: both;
+    margin: 0;
+    margin-top: 1.6em;
+    text-align: center;
+  }
+  aside .go-to-top div {
+    padding-top: 2px;
+  }
+  aside .empty {
+    margin: 0;
+    height: 0.5em;
+  }
+  .article {
+    position: relative;
+    width: 100%;
+    padding-right: 0.65em;
+    margin-right: 5em;
+  }
+  .portrait {
+    position: relative;
+    min-width: 16px;
+    min-height: 9px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 0.5em;
+  }
+}
+/*# sourceMappingURL=3Dsub.css.map */
