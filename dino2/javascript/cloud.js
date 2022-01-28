@@ -12,7 +12,7 @@ export function createClouds() {
     cloudElem.src = "../dino2/imgs/cloud.png";
     cloudElem.classList.add("cloud");
     setCustomProperty(cloudElem, "--top", randomBetween(5, 65));
-    worldElem.append(cloudElem);
+    worldElem.appendChild(cloudElem); //append
 
     currentCloud += 1;
   }
