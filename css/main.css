@@ -5,6 +5,16 @@
   --time-translateX: 0;
 }
 
+@font-face {
+  font-family: "Aleo";
+  src: url("../fonts/Aleo/Aleo-Light.ttf");
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-ExtraBold.ttf");
+}
+
 body {
   margin: 0;
   padding: 0;
