@@ -71,9 +71,20 @@
   background-color: #fc3c22;
 }
 
-@media only screen and (max-width: 986px) {
-  img {
-    width: 200px;
+@media only screen and (max-width: 970px) {
+  .thumbnail-container {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin-left: 3em;
+    margin-right: 3em;
+  }
+  .thumbnail-container img {
+    width: 100%;
+    height: 100%;
+  }
+  .thumbnail-container .thumbnail-text-box {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=PageTemplate.css.map */
