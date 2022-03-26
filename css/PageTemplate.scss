@@ -19,7 +19,7 @@
   // outline: 1px solid black;
   //box-sizing: border-box;
 
-  width: 900px;
+  width: 900px; //900
   height: 333px;
   margin: auto;
   margin-bottom: 2.5em;
@@ -67,4 +67,9 @@
     background-color: rgb(252, 60, 34);
   }
   color: rgb(255, 255, 255);
+}
+@media only screen and (max-width: 986px) {
+  img {
+    width: 200px;
+  }
 }

@@ -70,4 +70,10 @@
 .thumbnail-container:hover .thumbnail-text-box {
   background-color: #fc3c22;
 }
+
+@media only screen and (max-width: 986px) {
+  img {
+    width: 200px;
+  }
+}
 /*# sourceMappingURL=PageTemplate.css.map */
