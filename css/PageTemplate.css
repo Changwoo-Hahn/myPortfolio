@@ -76,18 +76,18 @@
   color: white;
 }
 
-@media only screen and (max-width: 970px) {
+@media only screen and (max-width: 950px) {
   .thumbnail-container {
     width: auto;
     height: auto;
-    margin-left: 3em;
-    margin-right: 3em;
+    margin-left: 2em;
+    margin-right: 2em;
     aspect-ratio: 900/333;
   }
   .thumbnail-container img {
     width: 100%;
     height: auto;
-    top: 50%;
+    top: 0;
     aspect-ratio: 3/1;
   }
   .thumbnail-container .thumbnail-text-box {
