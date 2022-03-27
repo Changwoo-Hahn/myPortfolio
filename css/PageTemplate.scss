@@ -24,6 +24,7 @@
   margin: auto;
   margin-bottom: 2.5em;
   padding: 0.1em;
+
   position: relative;
   display: flex;
 
@@ -37,17 +38,19 @@
     height: 33px;
     bottom: 0px;
     //padding: 0.3em 0.3em;
-    position: absolute;
-    display: flex;
-    //right: 0.1em;
 
-    margin: 0 0 0.05em 0;
+    position: absolute;
+
+    display: flex; //flex
+
+    margin: 0 0 0.08em 0; //bottom
     border-radius: 0 0 0.2em 0.2em;
 
     border-top: 1px solid black;
     align-items: center;
 
     h1.project-title {
+      display: flex;
       position: relative;
       align-items: center;
 
@@ -72,14 +75,13 @@
 .thumbnail-container:hover {
   .thumbnail-text-box {
     background-color: rgb(252, 60, 34);
+    h1.project-title {
+      color: rgb(255, 255, 255);
+    }
   }
-  color: rgb(255, 255, 255);
 }
 
 @media only screen and (max-width: 970px) {
-  // .thumbnail-section {
-  //   width: 100%;
-  // }
   .thumbnail-container {
     //position: relative;
     width: auto;
@@ -87,21 +89,25 @@
     margin-left: 3em;
     margin-right: 3em;
     aspect-ratio: 900/333;
-    box-sizing: border-box;
-    padding: 0.1em;
+    //box-sizing: border-box;
+
     img {
-      box-sizing: border-box;
+      //box-sizing: border-box;
       width: 100%;
       height: auto;
+      top: 50%;
       //bottom: 0;
       aspect-ratio: 3/1;
     }
     .thumbnail-text-box {
-      width: 100%;
       box-sizing: border-box;
-      position: absolute;
-      //right: -0.1em;
-      padding-right: 0.1em;
+
+      width: auto; //100
+      height: 33px;
+      right: 0.1em;
+      left: 0.1em;
+
+      //right: 0.1em;
       background-color: var(--background-color);
       h1.project-title {
         color: rgb(0, 0, 0);
