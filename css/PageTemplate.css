@@ -17,17 +17,17 @@
   height: 333px;
   margin: auto;
   margin-bottom: 2.5em;
-  padding: 0;
+  padding: 0.1em;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-radius: 0 0 0.2em 0.2em;
+  border-radius: 0.2em;
+  border: black solid 1.5px;
   cursor: pointer;
 }
 
 .thumbnail-container .thumbnail-text-box {
-  background-color: #414141;
   width: 900px;
   height: 33px;
   bottom: 0px;
@@ -35,7 +35,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 0 0 0.05em 0;
   border-radius: 0 0 0.2em 0.2em;
+  border-top: 1px solid black;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -49,7 +51,7 @@
   margin: 1.5px auto 0 auto;
   font-size: 1em;
   font-weight: 350;
-  color: white;
+  color: black;
 }
 
 .thumbnail-container img {
@@ -73,18 +75,32 @@
 
 @media only screen and (max-width: 970px) {
   .thumbnail-container {
-    position: relative;
     width: auto;
     height: auto;
     margin-left: 3em;
     margin-right: 3em;
+    aspect-ratio: 900/333;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0.1em;
   }
   .thumbnail-container img {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     width: 100%;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 3/1;
   }
   .thumbnail-container .thumbnail-text-box {
     width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    position: absolute;
+    padding-right: 0.1em;
+    background-color: var(--background-color);
+  }
+  .thumbnail-container .thumbnail-text-box h1.project-title {
+    color: black;
   }
 }
 /*# sourceMappingURL=PageTemplate.css.map */
