@@ -179,8 +179,14 @@ section.dino-game {
   background-color: var(--primary-color);
 }
 @media only screen and (max-width: 900px) {
+  .button-container {
+    margin-right: 0.25em;
+    margin-left: 0.25em;
+  }
   .button {
-    height: calc(5em + 5vw);
+    height: calc(5em + 6vw);
+    margin-right: 0.2em;
+    margin-left: 0.2em;
   }
 }
 // section .home-section {
