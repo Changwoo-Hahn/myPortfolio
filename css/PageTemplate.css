@@ -87,7 +87,33 @@
   .thumbnail-container img {
     width: 100%;
     height: auto;
-    top: 0;
+    aspect-ratio: 3/1;
+  }
+  .thumbnail-container .thumbnail-text-box {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: auto;
+    height: 33px;
+    right: 0.1em;
+    left: 0.1em;
+    background-color: var(--background-color);
+  }
+  .thumbnail-container .thumbnail-text-box h1.project-title {
+    color: black;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .thumbnail-container {
+    width: auto;
+    height: auto;
+    margin-left: 0.9em;
+    margin-right: 0.9em;
+    aspect-ratio: 900/365;
+  }
+  .thumbnail-container img {
+    width: 100%;
+    height: auto;
     aspect-ratio: 3/1;
   }
   .thumbnail-container .thumbnail-text-box {
