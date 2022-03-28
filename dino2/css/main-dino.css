@@ -93,8 +93,14 @@ body {
 
 .button span {
   font-family: "SF-Pixelate", sans-serif;
-  font-size: 3.1vmin;
+  font-size: 2em;
   color: #4e4e4e;
+}
+
+@media only screen and (max-width: 900px) {
+  .button {
+    font-size: 2.5vw;
+  }
 }
 
 .hide {

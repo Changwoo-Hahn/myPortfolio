@@ -216,9 +216,9 @@ section.dino-game {
   background-color: var(--primary-color);
 }
 
-@media (hover: hover) {
+@media (hover: none) {
   .button:hover {
-    background-color: blue;
+    background-color: teal;
   }
 }
 
