@@ -218,7 +218,7 @@ section.dino-game {
 
 @media (hover: none) {
   .button:hover {
-    background-color: teal;
+    background-color: inherit;
   }
 }
 
