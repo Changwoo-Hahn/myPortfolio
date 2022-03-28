@@ -227,6 +227,7 @@ section.dino-game {
     margin-right: calc(1em-0.5vw);
     margin-right: 0.23em;
     margin-left: 0.23em;
+    margin-top: 3.6em;
   }
   .button {
     height: calc(5em + 30vw);
