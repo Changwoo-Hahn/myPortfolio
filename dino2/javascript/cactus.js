@@ -107,7 +107,7 @@ function onJump(e) {
   }
 
   if (e.code !== "Space" || isJumping) {
-    if (e.target !== jumpButton) {
+    if (e.target !== jumpButton || isJumping) {
       return;
     }
   }

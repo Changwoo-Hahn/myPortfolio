@@ -165,7 +165,7 @@ section.dino-game {
   display: flex;
 
   width: 50%;
-  height: 6vmin;
+  height: 55px;
   margin-right: 0.3em;
   margin-left: 0.3em;
   border: 0.41vmin solid rgb(78, 78, 78);
@@ -177,6 +177,11 @@ section.dino-game {
 
 .button:hover {
   background-color: var(--primary-color);
+}
+@media only screen and (max-width: 900px) {
+  .button {
+    height: calc(5em + 5vw);
+  }
 }
 // section .home-section {
 //   background-color: red;
