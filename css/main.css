@@ -185,10 +185,13 @@ section.dino-game {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0.3em;
+  padding: 0.2em;
   margin-top: 2em;
-  margin-right: 2em;
-  margin-left: 2em;
+  margin-right: 1em;
+  margin-left: 1em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .button {
@@ -196,10 +199,14 @@ section.dino-game {
   display: -ms-flexbox;
   display: flex;
   width: 50%;
-  margin-right: 0.5em;
-  margin-left: 0.5em;
+  height: 6vmin;
+  margin-right: 0.3em;
+  margin-left: 0.3em;
   border: 0.41vmin solid #4e4e4e;
-  border-radius: 7px;
+  border-radius: 0.9vmin;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;

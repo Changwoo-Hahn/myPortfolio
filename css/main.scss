@@ -154,22 +154,24 @@ section.dino-game {
 }
 .button-container {
   display: flex;
-  padding: 0.3em;
+  padding: 0.2em;
   margin-top: 2em;
-  margin-right: 2em;
-  margin-left: 2em;
+  margin-right: 1em;
+  margin-left: 1em;
   //border: 2px red solid;
+  align-items: center;
 }
 .button {
   display: flex;
 
   width: 50%;
-
-  margin-right: 0.5em;
-  margin-left: 0.5em;
+  height: 6vmin;
+  margin-right: 0.3em;
+  margin-left: 0.3em;
   border: 0.41vmin solid rgb(78, 78, 78);
-  border-radius: 7px;
+  border-radius: 0.9vmin;
   //position: relative;
+  align-items: center;
   justify-content: center;
 }
 
