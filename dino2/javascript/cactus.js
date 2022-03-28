@@ -123,7 +123,7 @@ function attack(e) {
   //e.code !== "KeyA" ||
   //e.target !== attackButton
   if (e.code !== "KeyA" || isJumping) {
-    if (e.target !== attackButton) {
+    if (e.target !== attackButton || isJumping) {
       return;
     }
   }
