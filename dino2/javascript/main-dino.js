@@ -31,7 +31,8 @@ const startAttackScreenElem = document.querySelector(
   "[data-start-attack-screen]"
 );
 const cactusTutoElem = document.querySelector("[data-cactus-tuto]");
-
+const jumpButton = document.querySelector("[data-jump-button]");
+const attackButton = document.querySelector("[data-attack-button]");
 setPixelToWorldScale();
 window.addEventListener("resize", setPixelToWorldScale);
 //window size가 resize 될때마다 setPixelToWorldScale 작동
@@ -68,14 +69,22 @@ function update(time) {
   window.requestAnimationFrame(update);
 }
 
-document.addEventListener("keydown", setTutorial, { once: true });
+// document.addEventListener("keydown", setTutorial, { once: true }); //keyboard
+// document.addEventListener("click", setTutorial, { once: true }); //button click
+["keydown", "click"].forEach((e) =>
+  document.addEventListener(e, setTutorial, { once: true })
+);
 function setTutorial(e) {
+  //alert("Hi!");
   jumpTutorial = false;
   attackTutorial = false;
 
   if (!jumpTutorial && !attackTutorial) {
-    if (e.code == "Space") {
-      document.removeEventListener("keydown", setTutorial);
+    if (e.code == "Space" || jumpButton.contains(e.target)) {
+      ["keydown", "click"].forEach((e) =>
+        document.removeEventListener(e, setTutorial, { once: true })
+      );
+      //document.removeEventListener("keydown", setTutorial);
       startTitleElem.classList.add("hide"); //제목 지우기
       startAttackScreenElem.classList.remove("hide"); //글자 추가
       startScreenElem.classList.add("hide"); //기존 text 지우기
@@ -88,8 +97,14 @@ function setTutorial(e) {
       }, 550);
 
       const attackEvent = (e) => {
-        if (e.code == "KeyA" && jumpTutorial) {
-          document.removeEventListener("keydown", attackEvent);
+        if (
+          (e.code == "KeyA" || attackButton.contains(e.target)) &&
+          jumpTutorial
+        ) {
+          //document.removeEventListener("keydown", attackEvent);
+          ["keydown", "click"].forEach((e) =>
+            document.removeEventListener(e, attackEvent)
+          );
           cactusElem.src = "./dino2/imgs/cactus-attack.png";
           attackTutorial = true;
 
@@ -106,9 +121,15 @@ function setTutorial(e) {
           }, 500);
         }
       };
-      document.addEventListener("keydown", attackEvent);
+      //document.addEventListener("keydown", attackEvent);
+      ["keydown", "click"].forEach((e) =>
+        document.addEventListener(e, attackEvent)
+      );
     } else {
-      document.addEventListener("keydown", setTutorial);
+      //document.addEventListener("keydown", setTutorial);
+      ["keydown", "click"].forEach((e) =>
+        document.addEventListener(e, setTutorial)
+      );
     }
   }
 }
@@ -213,7 +234,10 @@ function handleLose() {
     startTitleElem.classList.remove("hide");
     startScreenElem.classList.remove("hide");
     startAttackScreenElem.classList.add("hide");
-    document.addEventListener("keydown", setTutorial, { once: true });
+    //document.addEventListener("keydown", setTutorial, { once: true });
+    ["keydown", "click"].forEach((e) =>
+      document.addEventListener(e, setTutorial, { once: true })
+    );
     cactusElem.classList.add("hide");
     cactusTutoElem.classList.remove("hide");
     jumpTutorial = false;

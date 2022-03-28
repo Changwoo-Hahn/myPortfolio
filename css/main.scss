@@ -152,6 +152,30 @@ section.dino-game {
   //border: 3px solid red;
   //background-color: blue;
 }
+.button-container {
+  display: flex;
+  padding: 0.3em;
+  margin-top: 2em;
+  margin-right: 2em;
+  margin-left: 2em;
+  //border: 2px red solid;
+}
+.button {
+  display: flex;
+
+  width: 50%;
+
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  border: 0.41vmin solid rgb(78, 78, 78);
+  border-radius: 7px;
+  //position: relative;
+  justify-content: center;
+}
+
+.button:hover {
+  background-color: var(--primary-color);
+}
 // section .home-section {
 //   background-color: red;
 //   position: relative;

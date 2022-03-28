@@ -8,6 +8,8 @@ const cactusElem = document.querySelector("[data-cactus]");
 const cactusColCenElem = document.querySelector("[data-cactus-col-center]");
 const cactusColLeElem = document.querySelector("[data-cactus-col-left]");
 const cactusColRiElem = document.querySelector("[data-cactus-col-right]");
+const attackButton = document.querySelector("[data-attack-button]");
+const jumpButton = document.querySelector("[data-jump-button]");
 const JUMP_SPEED = 0.42;
 const GRAVITY = 0.0015;
 const CACTUS_FRAME_COUNT = 2; //cactus run animation 동작이 두가지
@@ -33,10 +35,14 @@ export function setupCactus() {
   setCustomProperty(cactusColCenElem, "--bottom", 0);
   setCustomProperty(cactusColLeElem, "--bottom", 16.2);
   setCustomProperty(cactusColRiElem, "--bottom", 13.2);
-  document.removeEventListener("keydown", onJump);
-  document.addEventListener("keydown", onJump); //keydown을 하면 onJump 실행
-  document.removeEventListener("keydown", attack);
-  document.addEventListener("keydown", attack);
+  // document.removeEventListener("keydown", onJump);
+  // document.addEventListener("keydown", onJump); //keydown을 하면 onJump 실행
+  // document.removeEventListener("keydown", attack);
+  // document.addEventListener("keydown", attack);
+  ["keydown", "click"].forEach((e) => document.removeEventListener(e, onJump));
+  ["keydown", "click"].forEach((e) => document.addEventListener(e, onJump));
+  ["keydown", "click"].forEach((e) => document.removeEventListener(e, attack));
+  ["keydown", "click"].forEach((e) => document.addEventListener(e, attack));
 }
 export function updateCactus(delta, speedScale) {
   handleRun(delta, speedScale);
@@ -99,7 +105,12 @@ function onJump(e) {
   if (isJumping == null) {
     isJumping = false;
   }
-  if (e.code !== "Space" || isJumping) return;
+
+  if (e.code !== "Space" || isJumping) {
+    if (e.target !== jumpButton) {
+      return;
+    }
+  }
   //space 키가 아니면 실행 X
 
   yVelocity = JUMP_SPEED;
@@ -108,7 +119,15 @@ function onJump(e) {
 
 function attack(e) {
   isAttacking = false;
-  if (e.code !== "KeyA" || isJumping) return;
+  //if (!attackClick) return;
+  //e.code !== "KeyA" ||
+  //e.target !== attackButton
+  if (e.code !== "KeyA" || isJumping) {
+    if (e.target !== attackButton) {
+      return;
+    }
+  }
+
   if (e.repeat) return; //공격 반복 금지
 
   isAttacking = true;
@@ -118,7 +137,10 @@ function attack(e) {
   }
 
   setTimeout(() => {
-    document.addEventListener("keydown", { once: true });
+    //document.addEventListener("keydown", { once: true });
+    ["keydown", "click"].forEach((e) =>
+      document.addEventListener(e, { once: true })
+    );
     isAttacking = false;
   }, attackSpeed); //0.2초 공격 그리고 공격 false
   return isAttacking;
