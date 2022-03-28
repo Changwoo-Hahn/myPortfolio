@@ -33,8 +33,8 @@ header.time-header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: relative;
 }
 
@@ -54,14 +54,14 @@ header.time-header .container .time-block {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-animation: 20s linear 0s infinite normal none;
-          animation: 20s linear 0s infinite normal none;
+  animation: 20s linear 0s infinite normal none;
   -webkit-animation-play-state: paused;
-          animation-play-state: paused;
+  animation-play-state: paused;
   -webkit-animation-name: timeAnimation;
-          animation-name: timeAnimation;
+  animation-name: timeAnimation;
 }
 
 header.time-header .container .time-block p {
@@ -80,23 +80,35 @@ header.time-header .container .time-block p span {
 
 @-webkit-keyframes timeAnimation {
   0% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
   }
   100% {
     -webkit-transform: translateX(var(--time-translateX));
-            transform: translateX(var(--time-translateX));
+    -moz-transform: translateX(var(--time-translateX));
+    -ms-transform: translateX(var(--time-translateX));
+    -o-transform: translateX(var(--time-translateX));
+    transform: translateX(var(--time-translateX));
   }
 }
 
 @keyframes timeAnimation {
   0% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
   }
   100% {
     -webkit-transform: translateX(var(--time-translateX));
-            transform: translateX(var(--time-translateX));
+    -moz-transform: translateX(var(--time-translateX));
+    -ms-transform: translateX(var(--time-translateX));
+    -o-transform: translateX(var(--time-translateX));
+    transform: translateX(var(--time-translateX));
   }
 }
 
@@ -118,13 +130,13 @@ span.current-page {
 
 .info-block {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   height: 1.6em;
   overflow: hidden;
   border-color: black;
@@ -190,8 +202,8 @@ section.dino-game {
   margin-right: 1em;
   margin-left: 1em;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .button {
@@ -205,11 +217,11 @@ section.dino-game {
   border: 0.41vmin solid #4e4e4e;
   border-radius: 0.9vmin;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .button:hover {
