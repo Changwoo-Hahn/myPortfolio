@@ -3,6 +3,7 @@ window.onpageshow = function (event) {
     window.location.reload();
   }
 };
+
 function addZero(i) {
   if (i < 10) {
     i = "0" + i;
@@ -94,13 +95,15 @@ function timeBlockWidth(w) {
   var timeBlockClass = document.getElementsByClassName("time-block"); //class 로 바꾸기
   document.documentElement.style.setProperty(
     "--time-translateX",
-    (-1 * (w + 15)).toString() + "px"
+    -1 * (w + 15) + "px"
   );
+  // (-1 * (w + 15)).toString()
 
   for (var i = 0; i < timeBlockClass.length; i++) {
-    timeBlockClass[i].style.width = w.toString() + "px"; //change block width by months
+    timeBlockClass[i].style.width = w + "px"; //change block width by months
     timeBlockClass[i].style.animationPlayState = "running";
   }
+  //timeBlockClass[i].style.width = w.toString() + "px";
 
   //document.getElementsByClassName("time-block")
   // const animations = document.querySelectorAll("[data-animation");
