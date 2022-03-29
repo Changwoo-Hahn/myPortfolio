@@ -56,7 +56,7 @@ body {
   position: absolute;
   font-size: 3vmin;
   left: 25vmin;
-  top: 1vmin;
+  top: 0.5vmin;
 }
 .highestScore::before {
   content: "High: ";
@@ -65,7 +65,7 @@ body {
   position: absolute;
   font-size: 3vmin;
   right: 25vmin;
-  top: 1vmin;
+  top: 0.5vmin;
 }
 
 .start-screen {
@@ -73,6 +73,10 @@ body {
   font-size: 3.5vmin;
   top: 55%;
   left: 50%; //text 좌측상단이 가운데로 온다.
+  width: 100%; //temp
+  display: flex;
+
+  justify-content: center;
   transform: translate(
     -50%,
     -50%
@@ -83,6 +87,10 @@ body {
   font-size: 3.5vmin;
   top: 55%;
   left: 50%;
+  width: 100%; //temp
+  display: flex;
+
+  justify-content: center;
   transform: translate(-50%, -50%);
 }
 .button {

@@ -59,7 +59,7 @@ body {
   position: absolute;
   font-size: 3vmin;
   left: 25vmin;
-  top: 1vmin;
+  top: 0.5vmin;
 }
 
 .highestScore::before {
@@ -70,7 +70,7 @@ body {
   position: absolute;
   font-size: 3vmin;
   right: 25vmin;
-  top: 1vmin;
+  top: 0.5vmin;
 }
 
 .start-screen {
@@ -78,6 +78,13 @@ body {
   font-size: 3.5vmin;
   top: 55%;
   left: 50%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
@@ -87,6 +94,13 @@ body {
   font-size: 3.5vmin;
   top: 55%;
   left: 50%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
