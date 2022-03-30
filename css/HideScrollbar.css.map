@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,iDAAiD;AACjD,AAAA,IAAI,AAAA,mBAAmB,CAAC;EACtB,OAAO,EAAE,IAAI;CACd;;AAED,6CAA6C;AAC7C,AAAA,IAAI,CAAC;EACH,kBAAkB,EAAE,IAAI;EAAE,iBAAiB;EAC3C,eAAe,EAAE,IAAI;EAAE,aAAa;CACrC",
+    "sources": [
+        "HideScrollbar.scss"
+    ],
+    "names": [],
+    "file": "HideScrollbar.css"
+}

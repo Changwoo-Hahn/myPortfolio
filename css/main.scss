@@ -13,6 +13,7 @@
   font-family: "Poppins";
   src: url("../fonts/Poppins/Poppins-ExtraBold.ttf");
 }
+
 body {
   //@import url("https://fonts.googleapis.com/css2?family=Aleo:wght@300&display=swap");
   margin: 0;
@@ -178,11 +179,7 @@ section.dino-game {
 .button:hover {
   background-color: var(--primary-color);
 }
-@media (hover: none) {
-  .button:hover {
-    background-color: inherit;
-  }
-}
+
 @media only screen and (max-width: 820px) {
   .button-container {
     margin-right: calc(1em-0.5vw);

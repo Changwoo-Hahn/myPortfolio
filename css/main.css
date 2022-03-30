@@ -15,6 +15,11 @@
   src: url("../fonts/Poppins/Poppins-ExtraBold.ttf");
 }
 
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -214,12 +219,6 @@ section.dino-game {
 
 .button:hover {
   background-color: var(--primary-color);
-}
-
-@media (hover: none) {
-  .button:hover {
-    background-color: inherit;
-  }
 }
 
 @media only screen and (max-width: 820px) {
