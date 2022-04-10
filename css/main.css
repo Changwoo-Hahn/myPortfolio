@@ -15,11 +15,6 @@
   src: url("../fonts/Poppins/Poppins-ExtraBold.ttf");
 }
 
-button:disabled {
-  cursor: not-allowed;
-  pointer-events: all !important;
-}
-
 body {
   margin: 0;
   padding: 0;

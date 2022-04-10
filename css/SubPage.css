@@ -101,8 +101,6 @@ aside .award {
 .image-container img {
   width: auto;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .portrait {
@@ -252,4 +250,4 @@ span.blender::before {
     margin-bottom: 0.5em;
   }
 }
-/*# sourceMappingURL=3Dsub.css.map */
+/*# sourceMappingURL=SubPage.css.map */
