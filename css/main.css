@@ -129,7 +129,17 @@ span.current-page {
   overflow: hidden;
   border-color: black;
   border-top: 1px solid;
-  gap: 1.5em;
+  gap: 3.5em;
+}
+
+.info-block a img {
+  vertical-align: middle;
+  margin-top: 0.23em;
+  width: 1.85em;
+}
+
+.info-block img:hover {
+  cursor: pointer;
 }
 
 .info-block p {

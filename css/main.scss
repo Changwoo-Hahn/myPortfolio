@@ -103,7 +103,17 @@ span.current-page {
   border-color: black;
   border-top: 1px solid;
   //background: rgb(255, 221, 71);
-  gap:1.5em; //사이 간격
+  gap:3.5em; //사이 간격
+}
+
+.info-block a img{
+  
+ vertical-align: middle;
+  margin-top: 0.23em;
+  width: 1.85em;
+}
+.info-block img:hover{
+  cursor:pointer;
 }
 .info-block p {
   display: block;
