@@ -91,10 +91,11 @@ aside {
   justify-content: center;
   margin-bottom: 0.5em;
   img {
+    max-width: 100%;
     width: auto;
     height: 100%;
-
-    //object-fit: cover;
+    //max-height: 100%;
+    object-fit: cover;
   }
 }
 .portrait {
@@ -183,6 +184,12 @@ span.unity::before {
 }
 span.blender::before {
   background-image: url("../images/icons/blender-icon.png");
+}
+
+.about-block{
+  position:relative;
+  margin-right: 10em;
+  margin-left: 10em;
 }
 @media only screen and (max-width: 986px) {
   aside {

@@ -80,6 +80,38 @@
     }
   }
 }
+.about-section{
+  
+ // border: 2px solid pink;
+  margin-top:3em;
+  
+  .about-block{
+    
+    //position:absolute;
+    width: 30em;
+    //left:50%;
+    margin:auto;
+    font-size: 0.83em;
+    p{
+      text-align: justify;
+    }
+  }
+  .about-resume{
+    
+    border: 0.07em black solid;
+    display:flex;
+    border-radius: 0.35em;
+    height: 1.5em;
+    width: 5em;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+  }
+  .about-resume:hover{
+    background-color: var(--primary-color);
+    cursor:pointer;
+  }
+}
 
 @media only screen and (max-width: 950px) {
   .thumbnail-container {

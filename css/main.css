@@ -214,11 +214,11 @@ section.dino-game {
 
 .button:hover {
   background-color: var(--primary-color);
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 820px) {
   .button-container {
-    margin-right: calc(1em-0.5vw);
     margin-right: 0.23em;
     margin-left: 0.23em;
     margin-top: 3.5em;
