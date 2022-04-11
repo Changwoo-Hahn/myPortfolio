@@ -129,7 +129,7 @@ span.current-page {
   overflow: hidden;
   border-color: black;
   border-top: 1px solid;
-  gap: 3.5em;
+  gap: 1.5em;
 }
 
 .info-block p {

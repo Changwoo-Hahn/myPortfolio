@@ -113,6 +113,14 @@
   }
 }
 
+@media only screen and (max-width: 550px){
+  .about-section{
+  .about-block{
+    width: 90%;
+  }
+}
+}
+
 @media only screen and (max-width: 950px) {
   .thumbnail-container {
     //position: relative;
