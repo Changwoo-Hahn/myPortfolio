@@ -40,7 +40,7 @@ const monthNames = [
 ];
 
 timer();
-widthChange(month);
+
 setTimeout(widthChange, 1000);
 function timer() {
   var today = new Date();
@@ -71,7 +71,7 @@ function timer() {
   document.getElementById("current-time4").innerHTML = currentDateTime;
   setTimeout(timer, 10); //(function, milisecond0.001)
 }
-
+widthChange(month);
 function widthChange(m) {
   //div size depends on months
   if (m == 5) {
