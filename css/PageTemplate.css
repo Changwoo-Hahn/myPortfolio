@@ -8,7 +8,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 .thumbnail-container {
@@ -16,7 +16,7 @@
   width: 900px;
   height: 333px;
   margin: auto;
-  margin-bottom: 2.5em;
+  margin-bottom: 1.9em;
   padding: 0.1em;
   position: relative;
   display: -webkit-box;

@@ -10,7 +10,7 @@
   justify-content: center;
   //display: flex;
   position: relative;
-  margin-top: 2em;
+  margin-top: 1em; //2
 }
 
 .thumbnail-container {
@@ -22,7 +22,7 @@
   width: 900px; //900
   height: 333px;
   margin: auto;
-  margin-bottom: 2.5em;
+  margin-bottom: 1.9em; //2.5
   padding: 0.1em;
 
   position: relative;
@@ -80,45 +80,42 @@
     }
   }
 }
-.about-section{
-  
- // border: 2px solid pink;
-  margin-top:3em;
-  
-  .about-block{
-    
+.about-section {
+  // border: 2px solid pink;
+  margin-top: 3em;
+
+  .about-block {
     //position:absolute;
     width: 30em;
     //left:50%;
-    margin:auto;
+    margin: auto;
     font-size: 0.83em;
-    p{
+    p {
       text-align: justify;
     }
   }
-  .about-resume{
-    
+  .about-resume {
     border: 0.07em black solid;
-    display:flex;
+    display: flex;
     border-radius: 0.35em;
     height: 1.5em;
     width: 5em;
     justify-content: center;
     align-items: center;
-    margin:auto;
+    margin: auto;
   }
-  .about-resume:hover{
+  .about-resume:hover {
     background-color: var(--primary-color);
-    cursor:pointer;
+    cursor: pointer;
   }
 }
 
-@media only screen and (max-width: 550px){
-  .about-section{
-  .about-block{
-    width: 90%;
+@media only screen and (max-width: 550px) {
+  .about-section {
+    .about-block {
+      width: 90%;
+    }
   }
-}
 }
 
 @media only screen and (max-width: 950px) {
