@@ -2,6 +2,11 @@
   --asideWidth: 380px;
 }
 
+html,
+body {
+  margin-bottom: 0.7em;
+}
+
 section {
   position: relative;
   margin: 0 3px;

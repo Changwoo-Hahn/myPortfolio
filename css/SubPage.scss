@@ -1,6 +1,10 @@
 :root {
   --asideWidth: 380px;
 }
+html,
+body {
+  margin-bottom: 0.7em;
+}
 section {
   position: relative;
 
@@ -230,6 +234,7 @@ span.illustrator::before {
 span.vuforia::before {
   background-image: url("../images/icons/vuforia-icon.png");
 }
+
 @media only screen and (max-width: 986px) {
   aside {
     float: none;
