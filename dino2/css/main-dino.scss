@@ -1,0 +1,261 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box; //border + padding 을 포함한 width
+  user-select: none;
+}
+@font-face {
+  font-family: "SF-Pixelate";
+  src: url("../fonts/SF Pixelate.ttf");
+}
+
+@font-face {
+  font-family: "SF-Pixelate-Shaded-Bold";
+  src: url("../fonts/SF Pixelate Shaded Bold.ttf");
+}
+
+body {
+  //background-color: aquamarine;
+
+  margin: 0;
+  //display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.score,
+.highestScore::before,
+.highestScore,
+.start-screen,
+.start-attack {
+  font-family: "SF-Pixelate", sans-serif;
+  color: rgb(78, 78, 78);
+
+  //border: 2px solid coral;
+}
+
+.title {
+  font-family: "SF-Pixelate-Shaded-Bold";
+  color: rgb(73, 73, 73);
+
+  font-size: 10vmin;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.world {
+  overflow: hidden;
+  position: relative;
+  //   width: 100%;
+  //   height: 500px;
+}
+
+.score {
+  position: absolute;
+  font-size: 3vmin;
+  left: 25vmin;
+  top: 0.5vmin;
+}
+.highestScore::before {
+  content: "High: ";
+}
+.highestScore {
+  position: absolute;
+  font-size: 3vmin;
+  right: 25vmin;
+  top: 0.5vmin;
+}
+
+.start-screen {
+  position: absolute;
+  font-size: 3.5vmin;
+  top: 55%;
+  left: 50%; //text 좌측상단이 가운데로 온다.
+  width: 100%; //temp
+  display: flex;
+
+  justify-content: center;
+  transform: translate(
+    -50%,
+    -50%
+  ); //다시 글자의 x,y 50%만큼 이동하여 가운데 정렬
+}
+.start-attack {
+  position: absolute;
+  font-size: 3.5vmin;
+  top: 55%;
+  left: 50%;
+  width: 100%; //temp
+  display: flex;
+
+  justify-content: center;
+  transform: translate(-50%, -50%);
+}
+.button {
+  //game
+  span {
+    font-family: "SF-Pixelate", sans-serif;
+    font-size: 1.7em;
+    color: rgb(78, 78, 78);
+  }
+}
+@media only screen and (max-width: 820px) {
+  .button {
+    font-size: 2.5vw;
+  }
+}
+.hide {
+  display: none;
+}
+
+.ground {
+  --right: 0;
+  position: absolute;
+  width: 300%;
+  bottom: 0;
+  right: calc(var(--right) * 1%);
+}
+
+.cactus {
+  --bottom: 0;
+  --right: 1%;
+  //border: 1px solid red;
+  position: absolute;
+  right: calc(var(--right) * 1%); //1%;
+  height: 30%;
+  bottom: calc(var(--bottom) * 1%);
+  animation: 0.55s ease-out 0s normal;
+  animation-name: cactus-tuto-ani;
+}
+
+.cactus-col-side {
+  //red
+  --bottom: 16.2;
+  //border: 1px solid rgb(248, 4, 85);
+  position: absolute;
+  height: 10.5%;
+  right: 4.2%;
+  bottom: calc(var(--bottom) * 1%);
+}
+.cactus-col-center {
+  //green
+  --bottom: 0;
+  //border: 1px solid rgb(0, 219, 0);
+  position: absolute;
+  height: 30%;
+  right: 2.4%;
+  bottom: calc(var(--bottom) * 1%);
+}
+.cactus-col-side-back {
+  --bottom: 13.2;
+  //border: 1px solid rgb(248, 4, 85);
+  position: absolute;
+  height: 10.5%;
+  right: 1%;
+  bottom: calc(var(--bottom) * 1%);
+}
+.dinotest {
+  //border: 1px solid blue;
+  height: 30%;
+  position: absolute;
+  bottom: 0;
+  right: -7%; //-8% 화면에서 없어짐
+}
+.dino {
+  //border: 1px solid blue;
+  position: absolute;
+
+  right: calc(var(--right) * 1%);
+  height: 30%;
+  bottom: 0;
+}
+.dino-tutorial {
+  position: absolute;
+  bottom: 0;
+  height: 30%;
+  right: 50%;
+}
+.dinoJump {
+  bottom: 33%;
+}
+.deadDino {
+  --deg: 50;
+  --ddBottom: 25%;
+  --ddRight: 25%;
+  transition: all 0.5s ease-out;
+  position: absolute;
+  opacity: 0;
+  transform: rotate(var(--deg));
+  height: 10%;
+  bottom: var(--ddBottom);
+  right: var(--ddRight);
+}
+
+.fire {
+  position: absolute;
+  //border: 1px solid blue;
+  height: 30%;
+  bottom: 0;
+  right: calc(var(--right) * 1%);
+  //transition: transform 5s linear;
+  //transform: translateX(120%);
+}
+
+.cactus-tutorial {
+  //stationary-0
+  position: absolute;
+  bottom: 0;
+  height: 30%;
+  right: 45%;
+}
+
+.cactus-tuto-end {
+  animation-name: cactus-tuto-end-ani;
+  animation-duration: 0.9s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards; //animation 이 100% 멈춤
+  animation-delay: 0.3s;
+}
+@keyframes cactus-tuto-ani {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-95%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes cactus-tuto-end-ani {
+  0% {
+    right: 45%;
+  }
+  100% {
+    right: 1%;
+  }
+}
+
+.cloud {
+  --top: 20%;
+  position: absolute;
+  height: 12%;
+  animation-name: cloud-animation;
+  animation-duration: 23s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  top: calc(var(--top) * 1%);
+  right: 100;
+  z-index: -1;
+}
+
+@keyframes cloud-animation {
+  0% {
+    right: 107%;
+  }
+  100% {
+    right: -12%;
+  }
+}

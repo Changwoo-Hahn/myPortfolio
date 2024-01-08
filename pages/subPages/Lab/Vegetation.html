@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is Changwoo's Portfolio Site." />
+    <meta name="keywords" content="Portfolio,3D,HTML,CSS,Shader" />
+    <title>Changwoo's Portfolio-Vegetation</title>
+    <link rel="icon" type="image/x-icon" href="/images/icons/favicon-ico.ico" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y24CV8BDC9"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-Y24CV8BDC9");
+    </script>
+    <link rel="stylesheet" href="../../../css/main.css" />
+    <link rel="stylesheet" href="../../../css/SubPage.css" />
+    <link rel="stylesheet" href="../../../css/Scrollbar.css" />
+
+    <script async src="../../../js/main.js"></script>
+
+    <!-- link css -->
+  </head>
+
+  <body>
+    <div id="top"></div>
+    <header class="time-header">
+      <div class="container">
+        <div class="time-block">
+          <p class="time-text"><span id="current-time1"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time2"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time3"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time4"></span></p>
+        </div>
+      </div>
+    </header>
+
+    <div class="info-color-block">
+      <div class="info-block">
+        <p class="pName">Changwoo Hahn</p>
+        <a href="mailto:cwhxvx@gmail.com"
+          ><img src="../../../images/SVG/email_icon.svg" alt="email icon"
+        /></a>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <nav class="nav-bar">
+        <ul>
+          <li>
+            <a href="../../../index.html">Home</a>
+          </li>
+          <li>
+            <a href="../../3DPage.html">3D</a>
+          </li>
+          <li>
+            <a href="../../Game.html">Game</a>
+          </li>
+          <li>
+            <a href="../../Lab.html"><span class="current-page">Lab</span></a>
+          </li>
+          <li><a href="../../About.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <section>
+      <article class="article">
+        <script src="https://player.vimeo.com/api/player.js"></script>
+
+        <div class="image-container">
+          <img
+            src="../../imgs/Lab/Vegetation/Scene_1.png"
+            alt="Vegetation Scene 1"
+          />
+        </div>
+        <div class="image-container-two">
+          <div class="column">
+            <img src="../../imgs/Lab/Vegetation/Fake_SSS.gif" alt="Fake SSS" />
+          </div>
+          <div class="column">
+            <img
+              src="../../imgs/Lab/Vegetation/AddLight_Shadow.gif"
+              alt="Additional light and shadow receiving"
+            />
+          </div>
+        </div>
+        <p>Fake SSS / Lighting & Shadow</p>
+        <div class="image-container-two">
+          <div class="column">
+            <img
+              src="../../imgs/Lab/Vegetation/ColorChange.gif"
+              alt="Color changing"
+            />
+          </div>
+          <div class="column">
+            <img src="../../imgs/Lab/Vegetation/Wind.gif" alt="Wind" />
+          </div>
+        </div>
+        <p>Custom Color / Wind</p>
+        <section class="go-to-top">
+          <a href="#top">
+            <div>&#9651;</div>
+          </a>
+          <br /><br />
+        </section>
+        <!-- <div class="empty"></div> -->
+      </article>
+      <aside>
+        <h1>Vegetation</h1>
+        <p>
+          <span class="kor">
+            Stylized 스타일의 식물들을 만들었습니다. 다양한 프로젝트에 사용될 수
+            있도록 만들어 졌으며 색상과 형태및 텍스쳐를 쉽게 변경할수있도록
+            만들어졌습니다. 식물에 따라서 바람, Fake SSS, 양면 모두 그림자 와
+            빛을 받을 수 있는 속성이 있습니다. 이 프로젝트에는 Shadergraph와
+            custom unlit material을 위해 HLSL이 사용되었습니다.
+            <br /><br />최적화와 관련하여 LOD 및 GPU Instancing, Material
+            Property Block 그리고 Draw call에 대해 공부할 수 있었습니다.
+          </span>
+          <!-- A shader with 6 textures of different densities applied to a custom
+          unlit shader. -->
+        </p>
+        <p class="softwares-title">Softwares:</p>
+        <div class="grid">
+          <div class="software"><span class="unity">Unity</span></div>
+          <div class="software"><span class="blender">Blender</span></div>
+          <div class="software"><span class="photoshop">Photoshop</span></div>
+        </div>
+      </aside>
+    </section>
+  </body>
+</html>

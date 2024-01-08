@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is Changwoo's Portfolio Site." />
+    <meta name="keywords" content="Portfolio,3D,HTML,CSS,Shader" />
+    <title>Changwoo's Portfolio-NPR Toon Shader</title>
+    <link rel="icon" type="image/x-icon" href="/images/icons/favicon-ico.ico" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y24CV8BDC9"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-Y24CV8BDC9");
+    </script>
+    <link rel="stylesheet" href="../../../css/main.css" />
+    <link rel="stylesheet" href="../../../css/SubPage.css" />
+    <link rel="stylesheet" href="../../../css/Scrollbar.css" />
+
+    <script async src="../../../js/main.js"></script>
+
+    <!-- link css -->
+  </head>
+
+  <body>
+    <div id="top"></div>
+    <header class="time-header">
+      <div class="container">
+        <div class="time-block">
+          <p class="time-text"><span id="current-time1"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time2"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time3"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time4"></span></p>
+        </div>
+      </div>
+    </header>
+
+    <div class="info-color-block">
+      <div class="info-block">
+        <p class="pName">Changwoo Hahn</p>
+        <a href="mailto:cwhxvx@gmail.com"
+          ><img src="../../../images/SVG/email_icon.svg" alt="email icon"
+        /></a>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <nav class="nav-bar">
+        <ul>
+          <li>
+            <a href="../../../index.html">Home</a>
+          </li>
+          <li>
+            <a href="../../3DPage.html">3D</a>
+          </li>
+          <li>
+            <a href="../../Game.html">Game</a>
+          </li>
+          <li>
+            <a href="../../Lab.html"><span class="current-page">Lab</span></a>
+          </li>
+          <li><a href="../../About.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <section>
+      <article class="article">
+        <div class="portrait">
+          <img src="../../imgs/Lab/Toon/NPR_Toon.jpg" alt="Material Samples" />
+        </div>
+        <span class="kor">
+          셰이더는 기본적으로 Half Lambert + Blinn-Phong + Fresnel + Outline으로
+          이루어져 있다.
+          <br />
+          좌측은3개의 색상을 사용하여 gradient를 만든 예시이다. 우측은 Ramp
+          Texture를 기반으로 한 셰이더이며 highlight, rim 부분을 Pow와
+          Smoothstep을 활용하여 날카롭게 만들어주 었다.
+          <br /><br />
+
+          <div class="portrait">
+            <img src="../../imgs/Lab/Toon/PPOutline.jpg" alt="Outline" />
+          </div>
+          Post Processing Outline에는 2022.2부터 지원하는 URP Sample Buffer
+          노드를 사용했다. 2022.3 버전기준 BlitSource, Normal World Space,
+          Motion Vector 이렇게 3가지 버퍼를 지원하기 때문에 BlitSource와 Normal
+          World Space를 이용하여 outline을 만들어 보았다. BlitSource를 활용한
+          outline은 사용하는데 굉장히 제한되기 때문에 필요성을 크게 느끼지
+          못했다.
+          <br /><br />
+          다음 과제는 SRP를 활용하여 Normal과 Depth가 사용된 outline을 구현하는
+          것이다.
+        </span>
+
+        <section class="go-to-top">
+          <a href="#top">
+            <div>&#9651;</div>
+          </a>
+          <br /><br />
+        </section>
+        <!-- <div class="empty"></div> -->
+      </article>
+      <aside>
+        <h1>NPR Toon Shader</h1>
+        <p>
+          <span class="kor">
+            Toon Shader와 Stylized Shader를 공부하고자 만들게 되었습니다.
+            기본적으로 material은 HLSL코드로 작성되었습니다. <br /><br />
+            Post Processing Outline은 Shader Graph를 통해 구현되었습니다.
+
+            <br />
+            ------------------------------------------------
+            <br />
+            <a
+              href="https://www.youtube.com/watch?v=gw31oF9qITw&ab_channel=RobinSeibold"
+              >Toon Shader by Robin Seibold</a
+            ><br />
+            <a
+              href="https://www.ronja-tutorials.com/post/019-postprocessing-outlines/"
+              >Outline by Ronja's tutorials</a
+            ><br />
+            <a href="https://www.youtube.com/watch?v=VGEz8oKyMpY"
+              >Outline by Daniel Ilett</a
+            ><br />
+            <a
+              href="https://www.vertexfragment.com/ramblings/unity-postprocessing-sobel-outline/"
+              >Outline by Steven Sell</a
+            >
+          </span>
+          <!-- A shader with 6 textures of different densities applied to a custom
+          unlit shader. -->
+        </p>
+        <p class="softwares-title">Softwares:</p>
+        <div class="grid">
+          <div class="software"><span class="unity">Unity</span></div>
+          <div class="software"><span class="blender">Blender</span></div>
+          <div class="software"><span class="photoshop">Photoshop</span></div>
+        </div>
+      </aside>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+:root {
+  --primary-color: rgb(255, 38, 0);
+  --background-color: rgb(255, 248, 223);
+  --primary-yellow: rgb(255, 221, 71);
+  --time-translateX: 0;
+}
+
+@font-face {
+  font-family: "Aleo";
+  src: url("../fonts/Aleo/Aleo-Light.ttf");
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-ExtraBold.ttf");
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background-color);
+  font-family: "Aleo", serif;
+  font-size: 1.3em;
+  font-weight: 300;
+  overflow: overlay;
+}
+
+span.kor {
+  font-weight: 200;
+  font-family: "SUITE-Regular";
+}
+@font-face {
+  font-family: "SUITE-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2") format("woff2");
+}
+
+header.time-header {
+  overflow: hidden;
+  background: var(--primary-color);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+header.time-header .container {
+  display: flex;
+  gap: 15px;
+  z-index: 2;
+}
+header.time-header .container .time-block {
+  height: 2em;
+  width: 1240px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  animation: 20s linear 0s infinite normal none;
+  animation-play-state: running;
+  animation-name: timeAnimation;
+}
+header.time-header .container .time-block p {
+  margin-left: 10px;
+}
+header.time-header .container .time-block p span {
+  font-family: "Poppins", sans-serif;
+  font-size: 2em;
+  font-weight: 800;
+}
+
+.thumbnail-linkedin {
+  display: none;
+}
+
+#current-time4 {
+  display: none;
+}
+
+@keyframes timeAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(var(--time-translateX));
+  }
+}
+@media screen and (min-width: 1600px) {
+  #current-time4 {
+    display: flex;
+  }
+}
+.info-color-block {
+  background: rgb(255, 221, 71);
+}
+
+span.current-page {
+  border-bottom: 1.1px solid;
+}
+
+.info-block {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  height: 1.6em;
+  overflow: hidden;
+  border-color: black;
+  border-top: 1px solid;
+  gap: 3.5em;
+}
+
+.info-block a img {
+  vertical-align: middle;
+  margin-top: 0.26em;
+  width: 1.85em;
+}
+
+.info-block img:hover {
+  cursor: pointer;
+}
+
+.info-block p {
+  display: block;
+  line-height: 1.6em;
+  text-align: center;
+  text-decoration: none;
+  margin: 0;
+}
+
+.email {
+  line-height: 1.6em;
+  color: black;
+  text-decoration: none;
+}
+
+.nav-bar {
+  width: auto;
+  height: 1.6em;
+}
+.nav-bar ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  list-style-type: none;
+  gap: 1.47em;
+}
+.nav-bar li {
+  line-height: 1.6em;
+}
+.nav-bar a {
+  text-decoration: none;
+  color: black;
+}
+.nav-bar .nav-text-color-3D {
+  color: rgb(0, 0, 0);
+}
+
+section.dino-game {
+  display: flex;
+  margin-top: 2%;
+}
+
+.button-container {
+  display: flex;
+  padding: 0.2em;
+  margin-top: 2em;
+  margin-right: 1em;
+  margin-left: 1em;
+  align-items: center;
+}
+
+.button {
+  display: flex;
+  width: 50%;
+  height: 55px;
+  margin-right: 0.3em;
+  margin-left: 0.3em;
+  border: 0.41vmin solid rgb(78, 78, 78);
+  border-radius: 0.9vmin;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 820px) {
+  .button-container {
+    margin-right: 0.23em;
+    margin-left: 0.23em;
+    margin-top: 3.5em;
+  }
+  .button {
+    height: calc(5em + 33vw);
+    margin-right: 0.2em;
+    margin-left: 0.2em;
+  }
+}
+.grid-container {
+  display: grid;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 7px;
+  grid-template-columns: 33px 0.7fr 3fr;
+  align-items: stretch;
+  justify-items: stretch;
+  padding: 10px 7%;
+}
+
+.grid-item {
+  padding: 2px 6px;
+  font-size: 17px;
+  text-align: center;
+  align-items: center;
+  place-self: center stretch;
+}
+
+.grid-color {
+  background-color: rgba(255, 208, 52, 0.108);
+}/*# sourceMappingURL=main.css.map */

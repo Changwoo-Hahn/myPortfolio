@@ -1,0 +1,23 @@
+::-webkit-scrollbar {
+  width: 9px;
+  z-index: -7px;
+  box-shadow: none;
+}
+
+::-webkit-scrollbar-track {
+  scrollbar-width: none;
+  margin-top: 112px;
+  z-index: -1;
+  background: none;
+  border-top: 55px;
+  width: 55px;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+  top: 50px;
+  background: var(--primary-yellow);
+  width: 1px;
+  z-index: -100;
+  border-radius: 9px;
+}/*# sourceMappingURL=Scrollbar.css.map */

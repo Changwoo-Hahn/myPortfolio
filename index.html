@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is Changwoo's Portfolio Site." />
+    <meta name="keywords" content="Portfolio,3D,HTML,CSS,Shader" />
+    <title>Changwoo's Portfolio-Home</title>
+    <link rel="icon" type="image/x-icon" href="/images/icons/favicon-ico.ico" />
+    <!--Thumbnail LinkedIn 1.91:1 ratio and 1200X627 -->
+    <meta
+      name="image"
+      property="og:image"
+      content="https://changwoo-hahn.com/images/Thumbnail-LinkedIn.jpg"
+    />
+    <!-- "<%= require('./images/img.jpg') %>" -->
+    <!-- link css -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./dino2/css/main-dino.css" />
+    <link rel="stylesheet" href="./css/HideScrollbar.css" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y24CV8BDC9"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-Y24CV8BDC9");
+    </script>
+    <script defer src="js/main.js"></script>
+    <script defer src="dino2/javascript/main-dino.js" type="module"></script>
+  </head>
+
+  <body>
+    <header class="time-header">
+      <div class="container">
+        <div class="time-block">
+          <p class="time-text"><span id="current-time1"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time2"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time3"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time4"></span></p>
+        </div>
+      </div>
+    </header>
+
+    <div class="info-color-block">
+      <div class="info-block">
+        <p class="pName"><span class="kor">한창우</span></p>
+        <!-- Changwoo Hahn -->
+        <a href="mailto:cwhxvx@gmail.com"
+          ><img src="images/SVG/email_icon.svg" alt="email icon"
+        /></a>
+        <!-- <a class="email" href="mailto: hahncwart@gmail.com"
+          >hahncwart@gmail.com</a
+        > -->
+      </div>
+    </div>
+
+    <div class="info-block">
+      <nav class="nav-bar">
+        <ul>
+          <li>
+            <a href="#"><span class="current-page">Home</span></a>
+          </li>
+          <li><a href="pages/3DPage.html">3D</a></li>
+          <li><a href="pages/Game.html">Game</a></li>
+          <li>
+            <a href="pages/Lab.html">Lab</a>
+          </li>
+
+          <li><a href="pages/About.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+    <section class="dino-game">
+      <div class="world" data-world>
+        <div class="score" data-score>0</div>
+        <div class="highestScore" data-highest-score>0</div>
+        <div class="title" data-title>DINO 2.0</div>
+        <div class="start-screen" data-start-screen>Press "Space" To Jump</div>
+        <div class="start-attack hide" data-start-attack-screen>
+          Press "A" To Attack
+        </div>
+        <img src="dino2/imgs/ground.png" class="ground" data-ground />
+        <img src="dino2/imgs/ground.png" class="ground" data-ground />
+        <img
+          src="dino2/imgs/cactus-stationary-1.png"
+          class="cactus hide"
+          data-cactus
+        />
+        <img
+          src="dino2/imgs/collider-center.png"
+          class="cactus-col-center"
+          data-cactus-col-center
+        />
+        <img
+          src="dino2/imgs/collider-side.png"
+          class="cactus-col-side"
+          data-cactus-col-left
+        />
+        <img
+          src="dino2/imgs/collider-side.png"
+          class="cactus-col-side-back"
+          data-cactus-col-right
+        />
+        <img
+          src="dino2/imgs/dino-stationary.png"
+          class="dino-tutorial"
+          data-dino
+        />
+        <img
+          src="dino2/imgs/cactus-stationary-0.png"
+          class="cactus-tutorial"
+          data-cactus-tuto
+        />
+      </div>
+    </section>
+    <div class="button-container">
+      <div class="button" data-jump-button><span>Jump</span></div>
+      <div class="button" data-attack-button><span>Attack</span></div>
+    </div>
+    <img
+      class="thumbnail-linkedin"
+      src="images/Thumbnail-LinkedIn.jpg"
+      alt="Thumbnail"
+    />
+  </body>
+</html>

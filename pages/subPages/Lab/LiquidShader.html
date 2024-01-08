@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is Changwoo's Portfolio Site." />
+    <meta name="keywords" content="Portfolio,3D,HTML,CSS,Shader" />
+    <title>Changwoo's Portfolio-Liquid Shader</title>
+    <link rel="icon" type="image/x-icon" href="/images/icons/favicon-ico.ico" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y24CV8BDC9"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-Y24CV8BDC9");
+    </script>
+    <link rel="stylesheet" href="../../../css/main.css" />
+    <link rel="stylesheet" href="../../../css/SubPage.css" />
+    <link rel="stylesheet" href="../../../css/Scrollbar.css" />
+
+    <script async src="../../../js/main.js"></script>
+
+    <!-- link css -->
+  </head>
+
+  <body>
+    <div id="top"></div>
+    <header class="time-header">
+      <div class="container">
+        <div class="time-block">
+          <p class="time-text"><span id="current-time1"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time2"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time3"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time4"></span></p>
+        </div>
+      </div>
+    </header>
+
+    <div class="info-color-block">
+      <div class="info-block">
+        <p class="pName">Changwoo Hahn</p>
+        <a href="mailto:cwhxvx@gmail.com"
+          ><img src="../../../images/SVG/email_icon.svg" alt="email icon"
+        /></a>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <nav class="nav-bar">
+        <ul>
+          <li>
+            <a href="../../../index.html">Home</a>
+          </li>
+          <li>
+            <a href="../../3DPage.html">3D</a>
+          </li>
+          <li>
+            <a href="../../Game.html">Game</a>
+          </li>
+          <li>
+            <a href="../../Lab.html"><span class="current-page">Lab</span></a>
+          </li>
+          <li><a href="../../About.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <section>
+      <article class="article">
+        <script src="https://player.vimeo.com/api/player.js"></script>
+
+        <!-- <div class="image-container">
+          <img
+            src="../../imgs/Lab/Vegetation/Scene_1.png"
+            alt="Vegetation Scene 1"
+          />
+        </div> -->
+        <div class="image-container-two">
+          <div class="column">
+            <img
+              src="../../imgs/Lab/LiquidShader/Liquid_Step.gif"
+              alt="Liquid height"
+            />
+          </div>
+          <div class="column">
+            <img
+              src="../../imgs/Lab/LiquidShader/Liquid_TopColor.gif"
+              alt="Additional light and shadow receiving"
+            />
+          </div>
+        </div>
+        <span class="kor">
+          <p>[1] step()을 적용하여 액체의 범위를 정해준다.</p>
+          <p>
+            [2] clip()을 활용하여 윗부분을 투명하게 만든 후 뒷면의 색을 바꿔
+            윗부분이 채워진 것처럼 보이게 만든다.
+          </p>
+
+          <div class="image-container-two">
+            <div class="column">
+              <img
+                src="../../imgs/Lab/LiquidShader/Liquid_Wobble.gif"
+                alt="Color changing"
+              />
+            </div>
+          </div>
+          <p>
+            [3] 액체의 각도를 X, Z 축으로 분리하여 관리한다.
+            <a
+              href="https://docs.unity3d.com/Packages/com.unity.shadergraph@6.9/manual/Rotate-About-Axis-Node.html"
+              >Rotate About Axis Node 유니티 공식 Doc</a
+            >
+          </p>
+
+          <div class="image-container-two">
+            <div class="column">
+              <img
+                src="../../imgs/Lab/LiquidShader/Liquid_Tilting_before.gif"
+                alt="Liquid height"
+              />
+            </div>
+            <div class="column">
+              <img
+                src="../../imgs/Lab/LiquidShader/Liquid_Tilting_after.gif"
+                alt="Additional light and shadow receiving"
+              />
+            </div>
+          </div>
+          <p>
+            [4.a]에서 볼 수 있듯이 액체의 높이는 world space를 기반으로 하기
+            때문에 옆으로 눕혔을 시에 물이 꽉 채워지는 것을 볼 수 있다. 이
+            문제를 해결하기 위해서는 물병의 가로와 세로의 비율을 구하고 내적으로
+            기울기를 구하여 물병이 기울어질수록 일정 비율로 물의 높이를 낮춰주는
+            방식으로 문제를 해결했다. 이 방법은 물병이 대칭일 때만 자연스럽게
+            적용되는 단점이 있다. [4.b] 참고.
+          </p>
+          <div class="image-container-two">
+            <div class="column">
+              <img
+                src="../../imgs/Lab/LiquidShader/Liquid_Wobble_Velocity.gif"
+                alt="Liquid Velocity"
+              />
+            </div>
+            <div class="column">
+              <img
+                src="../../imgs/Lab/LiquidShader/Liquid_Wobble_AngularVelocity.gif"
+                alt="Liquid Angular Velocity"
+              />
+            </div>
+          </div>
+          <p>
+            [5] position 기반 속력과 각속도(angular velocity)를 구하여 액체의
+            기울기에 영향을 주도록 만든다. 좌우로 물이 흔들리는 기능을 구현하기
+            위해서는 sin() 값을 흔들림 값에 곱해 구현했다.
+          </p>
+          <div class="image-container-two">
+            <div class="column">
+              <img
+                src="../../imgs/Lab/LiquidShader/Liquid_Wobble_Rim_Foam.gif"
+                alt="Liquid foam and rim light"
+              />
+            </div>
+          </div>
+          [6] Rim light와 윗면에 거품을 추가해주었다.
+          <br /><br />
+          <div class="image-container">
+            <img
+              src="../../imgs/Lab/LiquidShader/Liquid_1.gif"
+              alt="Liquid Example"
+            />
+          </div>
+        </span>
+        <section class="go-to-top">
+          <a href="#top">
+            <div>&#9651;</div>
+          </a>
+          <br /><br />
+        </section>
+        <!-- <div class="empty"></div> -->
+      </article>
+      <aside>
+        <h1>Liquid Shader</h1>
+        <p>
+          <span class="kor">
+            URP프로젝트에서 HLSL언어로 작성된 Liquid Shader입니다.
+            <br /><br />
+            > <a href="https://pastebin.com/XT4qBJFR"> Shader 코드</a>
+            <br />
+            > <a href="https://pastebin.com/Jp8Mk5FP"> C# 코드</a>
+            <br />
+            ------------------------------------------------
+            <br />
+            >
+            <a href="https://www.youtube.com/watch?v=DKSpgFuKeb4&t=89s"
+              >참고자료(1)</a
+            ><br />
+            >
+            <a href="https://www.youtube.com/watch?v=p9NeBW4pgGk"
+              >참고자료(2)</a
+            >
+          </span>
+          <!-- A shader with 6 textures of different densities applied to a custom
+          unlit shader. -->
+        </p>
+        <p class="softwares-title">Softwares:</p>
+        <div class="grid">
+          <div class="software"><span class="unity">Unity</span></div>
+          <div class="software"><span class="maya">Maya</span></div>
+          <!-- <div class="software"><span class="photoshop">Photoshop</span></div> -->
+        </div>
+      </aside>
+    </section>
+  </body>
+</html>

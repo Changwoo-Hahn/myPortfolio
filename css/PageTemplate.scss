@@ -1,0 +1,337 @@
+//@import "../css/main.css";
+
+.CG-page-body {
+  //background-color: rgb(31, 31, 32);
+  background-color: var(--background-color);
+}
+
+.thumbnail-section {
+  overflow: hidden;
+  justify-content: center;
+  //display: flex;
+  position: relative;
+  margin-top: 1em; //2
+}
+
+.thumbnail-container {
+  overflow: hidden;
+
+  // outline: 1px solid black;
+  //box-sizing: border-box;
+
+  width: 900px; //900
+  height: 333px;
+  margin: auto;
+  margin-bottom: 1.9em; //2.5
+  padding: 0.1em;
+
+  position: relative;
+  display: flex;
+
+  border-radius: 0.2em; // 0 0 0.2em 0.2em
+  border: rgb(0, 0, 0) solid 1.5px;
+
+  cursor: pointer;
+  .thumbnail-text-box {
+    //background-color: rgb(65, 65, 65); //var(--primary-yellow);
+    width: 900px; //900px
+    height: 33px;
+    bottom: 0px;
+    //padding: 0.3em 0.3em;
+
+    position: absolute;
+
+    display: flex; //flex
+
+    margin: 0 0 0.08em 0; //bottom
+    border-radius: 0 0 0.2em 0.2em;
+
+    border-top: 1px solid black;
+    align-items: center;
+
+    h1.project-title {
+      display: flex;
+      position: relative;
+      align-items: center;
+
+      margin: 1.5px auto 0 auto;
+      font-size: 1em;
+      font-weight: 350;
+      color: rgb(0, 0, 0);
+    }
+  }
+
+  img {
+    top: 0;
+    padding: 0 0 -2px 0;
+    margin: 0;
+    width: 900px; //900px
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0.2em 0.2em 0 0;
+  }
+}
+
+.thumbnail-container:hover {
+  .thumbnail-text-box {
+    background-color: rgb(252, 60, 34);
+    h1.project-title {
+      color: rgb(255, 255, 255);
+    }
+  }
+}
+/////////////////GRID////////////////////////////////////////////////////////
+.thumbnail-section-grid
+{
+  margin: 10px 20px 30px 20px;
+  margin-top:10px;
+  margin-bottom:30px;
+}
+.thumbnail-container-grid{
+  //margin-right: 50%;
+  width:100%;
+  display: grid;
+  grid-gap: 7px;
+  box-sizing: border-box;//padding과 border과 같은 기능이 박스 안쪽으로 생기게 함 
+
+  justify-content: space-around; //간격을 자동으로 맞춰주며 가운데로 그리드 셀을 정렬시켜줌
+   //grid-template-columns: repeat(5, minmax(200px,350px));  //그리드 최대 최소 사이즈 조절minmax(340px,1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+}
+.thumbnail-item:hover{
+  background-color:  var( --primary-yellow);
+}
+.thumbnail-item{
+
+  //padding-bottom: 25%;
+  //background-color:  rgb(252, 201, 34);
+  overflow: hidden;
+  
+  box-sizing: border-box; 
+  width: 100%; //340
+  height: auto;
+  aspect-ratio: 340/333; //썸네일 Cell 비율
+  margin: auto;
+
+  position: relative;
+
+  border-radius: 0.2em; // 0 0 0.2em 0.2em
+  border: rgb(0, 0, 0) solid 1.5px;
+
+  img { //썸네일 이미지 사이즈 비율 340 x 300
+    position:absolute;
+    box-sizing: border-box;
+
+    padding:0.1em;
+    
+    width: 100%; //900px
+    height: calc(100% - 33px);
+    object-fit: cover;
+    border-radius: 0.2em 0.2em 0 0;
+
+  }
+  .thumbnail-text-box {
+    //background-color: rgb(218, 23, 23); //var(--primary-yellow);
+    box-sizing: border-box;
+    width: 100%; //900px
+   //padding-right:4em;
+    position: absolute;
+    padding:0.2em;
+    height:33px;
+    bottom: 0px;
+   // margin-right:1em;
+    //margin-bottom: 5em;
+    //padding: 0.3em 0.3em;
+
+    display: flex; //flex
+
+   // margin: 0 auto 0.08em auto; //bottom
+    border-radius: 0 0 0.2em 0.2em;
+    
+    border-top: 1px solid black;
+    align-items: center; //vertical center
+    //justify-content: center; //글자 가운데 정렬 Horizontally
+
+    h1.project-title {
+      //display: flex;
+      position: absolute;
+      box-sizing: border-box;
+
+      
+      justify-self: center;
+      font-size: 1em;
+      font-weight: 350;
+      color: rgb(0, 0, 0);
+      
+    }
+
+    img{
+      right:2px;
+      width:30px;
+      height:30px;
+    }
+  }
+  
+  
+}
+//////////////////////////////////////////////////////////////////////////////////
+.about-section {
+  //border: 2px solid pink;
+  margin-top: 1em;
+
+  .about-block {
+    //position:absolute;
+    width: 30em;
+    //left:50%;
+    margin: auto;
+    font-size: 0.83em;
+    p {
+      text-align: justify;
+    }
+  }
+  // .about-resume {
+  //   border: 0.07em black solid;
+  //   display: flex;
+  //   border-radius: 0.35em;
+  //   height: 1.5em;
+  //   width: 5em;
+  //   justify-content: center;
+  //   align-items: center;
+  //   margin: auto;
+  // }
+  // .about-resume:hover {
+  //   background-color: var(--primary-color);
+  //   cursor: pointer;
+  // }
+}
+.about-infoBox {
+  border: 0.07em solid black;
+  //background-color: rgb(255, 229, 126);
+  display:flex;
+  float:left;
+  border-radius: 0.35em;
+  height: 1.5em;
+  //gap:15px;
+  //min-width: 50px;
+  width:48%;
+  
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+ 
+  text-align: center;
+}
+//.about-link{}
+.about-linkedin{
+  border: 0.07em solid black;
+  //background-color: rgb(255, 229, 126);
+  display:flex;
+  float: right;
+  border-radius: 0.35em;
+  height: 1.5em;
+
+  width:48%;
+ 
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+  
+  //line-height: normal;
+  span{
+    color:black;
+
+    text-decoration: none;
+  }
+  // a{
+  //   //vertical-align: middle; 
+  // }
+}
+.about-linkedin:hover{
+  background-color: var(--primary-yellow);
+  cursor: pointer;
+}
+
+.clear{
+  clear:both;
+}
+///
+/// 
+
+/// 
+@media only screen and (max-width: 647px){
+  .thumbnail-container-grid{
+
+  grid-template-columns: repeat(1, minmax(100px, 350px));
+  }
+ 
+}
+@media only screen and (max-width: 550px) {
+  .about-section {
+    .about-block {
+      width: 90%;
+    }
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .thumbnail-container {
+    //position: relative;
+    width: auto;
+    height: auto;
+    margin-left: 2em;
+    margin-right: 2em;
+    aspect-ratio: 900/333;
+
+    img {
+      width: 100%;
+      height: auto;
+
+      aspect-ratio: 3/1;
+    }
+    .thumbnail-text-box {
+      box-sizing: border-box;
+
+      width: auto; //100
+      height: 33px;
+      right: 0.1em;
+      left: 0.1em;
+
+      background-color: var(--background-color);
+      h1.project-title {
+        color: rgb(0, 0, 0);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .thumbnail-container {
+    //position: relative;
+    width: auto;
+    height: auto;
+    margin-left: 0.9em;
+    margin-right: 0.9em;
+    aspect-ratio: 900/365;
+
+    img {
+      width: 100%;
+      height: auto;
+
+      aspect-ratio: 3/1;
+    }
+    .thumbnail-text-box {
+      box-sizing: border-box;
+
+      width: auto; //100
+      height: 33px;
+      right: 0.1em;
+      left: 0.1em;
+
+      background-color: var(--background-color);
+      h1.project-title {
+        color: rgb(0, 0, 0);
+      }
+    }
+  }
+}

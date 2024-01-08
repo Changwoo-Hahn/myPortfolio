@@ -1,0 +1,239 @@
+.CG-page-body {
+  background-color: var(--background-color);
+}
+
+.thumbnail-section {
+  overflow: hidden;
+  justify-content: center;
+  position: relative;
+  margin-top: 1em;
+}
+
+.thumbnail-container {
+  overflow: hidden;
+  width: 900px;
+  height: 333px;
+  margin: auto;
+  margin-bottom: 1.9em;
+  padding: 0.1em;
+  position: relative;
+  display: flex;
+  border-radius: 0.2em;
+  border: rgb(0, 0, 0) solid 1.5px;
+  cursor: pointer;
+}
+.thumbnail-container .thumbnail-text-box {
+  width: 900px;
+  height: 33px;
+  bottom: 0px;
+  position: absolute;
+  display: flex;
+  margin: 0 0 0.08em 0;
+  border-radius: 0 0 0.2em 0.2em;
+  border-top: 1px solid black;
+  align-items: center;
+}
+.thumbnail-container .thumbnail-text-box h1.project-title {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin: 1.5px auto 0 auto;
+  font-size: 1em;
+  font-weight: 350;
+  color: rgb(0, 0, 0);
+}
+.thumbnail-container img {
+  top: 0;
+  padding: 0 0 -2px 0;
+  margin: 0;
+  width: 900px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.2em 0.2em 0 0;
+}
+
+.thumbnail-container:hover .thumbnail-text-box {
+  background-color: rgb(252, 60, 34);
+}
+.thumbnail-container:hover .thumbnail-text-box h1.project-title {
+  color: rgb(255, 255, 255);
+}
+
+.thumbnail-section-grid {
+  margin: 10px 20px 30px 20px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.thumbnail-container-grid {
+  width: 100%;
+  display: grid;
+  grid-gap: 7px;
+  box-sizing: border-box;
+  justify-content: space-around;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.thumbnail-item:hover {
+  background-color: var(--primary-yellow);
+}
+
+.thumbnail-item {
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 340/333;
+  margin: auto;
+  position: relative;
+  border-radius: 0.2em;
+  border: rgb(0, 0, 0) solid 1.5px;
+}
+.thumbnail-item img {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 0.1em;
+  width: 100%;
+  height: calc(100% - 33px);
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.2em 0.2em 0 0;
+}
+.thumbnail-item .thumbnail-text-box {
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  padding: 0.2em;
+  height: 33px;
+  bottom: 0px;
+  display: flex;
+  border-radius: 0 0 0.2em 0.2em;
+  border-top: 1px solid black;
+  align-items: center;
+}
+.thumbnail-item .thumbnail-text-box h1.project-title {
+  position: absolute;
+  box-sizing: border-box;
+  justify-self: center;
+  font-size: 1em;
+  font-weight: 350;
+  color: rgb(0, 0, 0);
+}
+.thumbnail-item .thumbnail-text-box img {
+  right: 2px;
+  width: 30px;
+  height: 30px;
+}
+
+.about-section {
+  margin-top: 1em;
+}
+.about-section .about-block {
+  width: 30em;
+  margin: auto;
+  font-size: 0.83em;
+}
+.about-section .about-block p {
+  text-align: justify;
+}
+
+.about-infoBox {
+  border: 0.07em solid black;
+  display: flex;
+  float: left;
+  border-radius: 0.35em;
+  height: 1.5em;
+  width: 48%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+}
+
+.about-linkedin {
+  border: 0.07em solid black;
+  display: flex;
+  float: right;
+  border-radius: 0.35em;
+  height: 1.5em;
+  width: 48%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+}
+.about-linkedin span {
+  color: black;
+  text-decoration: none;
+}
+
+.about-linkedin:hover {
+  background-color: var(--primary-yellow);
+  cursor: pointer;
+}
+
+.clear {
+  clear: both;
+}
+
+@media only screen and (max-width: 647px) {
+  .thumbnail-container-grid {
+    grid-template-columns: repeat(1, minmax(100px, 350px));
+  }
+}
+@media only screen and (max-width: 550px) {
+  .about-section .about-block {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .thumbnail-container {
+    width: auto;
+    height: auto;
+    margin-left: 2em;
+    margin-right: 2em;
+    aspect-ratio: 900/333;
+  }
+  .thumbnail-container img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/1;
+  }
+  .thumbnail-container .thumbnail-text-box {
+    box-sizing: border-box;
+    width: auto;
+    height: 33px;
+    right: 0.1em;
+    left: 0.1em;
+    background-color: var(--background-color);
+  }
+  .thumbnail-container .thumbnail-text-box h1.project-title {
+    color: rgb(0, 0, 0);
+  }
+}
+@media only screen and (max-width: 480px) {
+  .thumbnail-container {
+    width: auto;
+    height: auto;
+    margin-left: 0.9em;
+    margin-right: 0.9em;
+    aspect-ratio: 900/365;
+  }
+  .thumbnail-container img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/1;
+  }
+  .thumbnail-container .thumbnail-text-box {
+    box-sizing: border-box;
+    width: auto;
+    height: 33px;
+    right: 0.1em;
+    left: 0.1em;
+    background-color: var(--background-color);
+  }
+  .thumbnail-container .thumbnail-text-box h1.project-title {
+    color: rgb(0, 0, 0);
+  }
+}/*# sourceMappingURL=PageTemplate.css.map */

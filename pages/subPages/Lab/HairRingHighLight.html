@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is Changwoo's Portfolio Site." />
+    <meta name="keywords" content="Portfolio,3D,HTML,CSS,Shader" />
+    <title>Changwoo's Portfolio-NPR Hair Ring Highlight</title>
+    <link rel="icon" type="image/x-icon" href="/images/icons/favicon-ico.ico" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y24CV8BDC9"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-Y24CV8BDC9");
+    </script>
+    <link rel="stylesheet" href="../../../css/main.css" />
+    <link rel="stylesheet" href="../../../css/SubPage.css" />
+    <link rel="stylesheet" href="../../../css/Scrollbar.css" />
+
+    <script async src="../../../js/main.js"></script>
+
+    <!-- link css -->
+  </head>
+
+  <body>
+    <div id="top"></div>
+    <header class="time-header">
+      <div class="container">
+        <div class="time-block">
+          <p class="time-text"><span id="current-time1"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time2"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time3"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time4"></span></p>
+        </div>
+      </div>
+    </header>
+
+    <div class="info-color-block">
+      <div class="info-block">
+        <p class="pName">Changwoo Hahn</p>
+        <a href="mailto:cwhxvx@gmail.com"
+          ><img src="../../../images/SVG/email_icon.svg" alt="email icon"
+        /></a>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <nav class="nav-bar">
+        <ul>
+          <li>
+            <a href="../../../index.html">Home</a>
+          </li>
+          <li>
+            <a href="../../3DPage.html">3D</a>
+          </li>
+          <li>
+            <a href="../../Game.html">Game</a>
+          </li>
+          <li>
+            <a href="../../Lab.html"><span class="current-page">Lab</span></a>
+          </li>
+          <li><a href="../../About.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <section>
+      <article class="article">
+        <div class="image-container-two">
+          <div class="column">
+            <img
+              src="../../imgs/Lab/Hair_Ring_Highlight/Hair_Rotation.gif"
+              alt="Rotation"
+            />
+          </div>
+          <div class="column">
+            <img
+              src="../../imgs/Lab/Hair_Ring_Highlight/Hair_Properties.gif"
+              alt="Properties"
+            />
+          </div>
+        </div>
+
+        <div class="portrait">
+          <img
+            src="../../imgs/Lab/Hair_Ring_Highlight/Hair_1.jpg"
+            alt="Hair Ring"
+          />
+        </div>
+        <span class="kor">
+          [1] 종법선과 하프디렉션을 내적 해주면 위와 같은 결과가 나온다. 이
+          결과와 반전된 것을 곱해주고 필요에 따라 스칼라값을 곱해주면 위와 같은
+          ring 모양이 만들어진다.
+
+          <div class="portrait">
+            <img
+              src="../../imgs/Lab/Hair_Ring_Highlight/Hair_2.jpg"
+              alt="Hair Highlight"
+            />
+          </div>
+          [2] Ring에 노이즈 텍스쳐를 적용시켜 머리카락처럼 보이는 하이라이트를
+          만들어준다. 마지막으로 lerp()를 이용하여 하이라이트 부분과 머리카락
+          부분을 분리시켜 색을 적용시킨다.
+        </span>
+
+        <section class="go-to-top">
+          <a href="#top">
+            <div>&#9651;</div>
+          </a>
+          <br /><br />
+        </section>
+        <!-- <div class="empty"></div> -->
+      </article>
+      <aside>
+        <h1>Hair Ring Highlight</h1>
+        <p>
+          <span class="kor">
+            HLSL코드로 작성된 셰이더 입니다. <br /><br />
+            Noise texture한장만이 사용되어 간단하게 만들어진 하이라이트입니다.
+            장점은 가볍고 하이라이트의 속성을 쉽게 변형시킬 수 있다는 점입니다.
+            단점은 UV를 신경써서 펴주고 배치해주어야 합니다. Hair 모델링도
+            신경써서 디자인 해주어야하는데 한개의 큰 mesh덩어리를 사용하게 되면
+            원하는 ring효과를 만들어내기 힘들게 됩니다.
+            <br />
+            ------------------------------------------------
+            <br />
+            <a
+              href="https://www.cgtrader.com/free-3d-models/character/woman/kawaii-anime-girl-3d-model"
+              >3D Asset 출처</a
+            >
+          </span>
+          <!-- A shader with 6 textures of different densities applied to a custom
+          unlit shader. -->
+        </p>
+        <p class="softwares-title">Softwares:</p>
+        <div class="grid">
+          <div class="software"><span class="unity">Unity</span></div>
+
+          <div class="software"><span class="photoshop">Photoshop</span></div>
+        </div>
+      </aside>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is Changwoo's Portfolio Site." />
+    <meta name="keywords" content="Portfolio,3D,HTML,CSS,Shader" />
+    <title>Changwoo's Portfolio-Water Ripple</title>
+    <link rel="icon" type="image/x-icon" href="/images/icons/favicon-ico.ico" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y24CV8BDC9"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-Y24CV8BDC9");
+    </script>
+    <link rel="stylesheet" href="../../../css/main.css" />
+    <link rel="stylesheet" href="../../../css/SubPage.css" />
+    <link rel="stylesheet" href="../../../css/Scrollbar.css" />
+
+    <script async src="../../../js/main.js"></script>
+
+    <!-- link css -->
+  </head>
+
+  <body>
+    <div id="top"></div>
+    <header class="time-header">
+      <div class="container">
+        <div class="time-block">
+          <p class="time-text"><span id="current-time1"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time2"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time3"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time4"></span></p>
+        </div>
+      </div>
+    </header>
+
+    <div class="info-color-block">
+      <div class="info-block">
+        <p class="pName">Changwoo Hahn</p>
+        <a href="mailto:cwhxvx@gmail.com"
+          ><img src="../../../images/SVG/email_icon.svg" alt="email icon"
+        /></a>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <nav class="nav-bar">
+        <ul>
+          <li>
+            <a href="../../../index.html">Home</a>
+          </li>
+          <li>
+            <a href="../../3DPage.html">3D</a>
+          </li>
+          <li>
+            <a href="../../Game.html">Game</a>
+          </li>
+          <li>
+            <a href="../../Lab.html"><span class="current-page">Lab</span></a>
+          </li>
+          <li><a href="../../About.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <section>
+      <article class="article">
+        <div class="image-container-two">
+          <div class="column">
+            <img
+              src="../../imgs/Lab/WaterRipple/WaterRipple_Fixed.gif"
+              alt="Fixed water ripple"
+            />
+          </div>
+          <div class="column">
+            <img
+              src="../../imgs/Lab/WaterRipple/WaterRipple_Movement.gif"
+              alt="Ripple movement"
+            />
+          </div>
+        </div>
+
+        <div class="image-container-two">
+          <div class="column">
+            <img
+              src="../../imgs/Lab/WaterRipple/WaterWave_SineWaveMove.gif"
+              alt="Ripple Movement"
+            />
+          </div>
+          <div class="column">
+            <img
+              src="../../imgs/Lab/WaterRipple/WaterWave_SineWaveStrength.gif"
+              alt="Strength"
+            />
+          </div>
+        </div>
+        <span class="kor">
+          [1] 물결의 위치를 자유롭게 조정하기 위해 Vector3 속성에서 object
+          position을 빼주면된다. <br /><br />
+          [2] 물결은 sine을 기반으로 계산된다. Length 함수로 원점으로부터 sine의
+          강도가 상쇄되도록 계산해준다. 반경을 조절하기 위해서 smoothstep을
+          사용했다.<br /><br />
+          <div class="image-container-two">
+            <div class="column">
+              <img
+                src="../../imgs/Lab/WaterRipple/WaterRipple_TextureOffset.gif"
+                alt="Ripple texture offset"
+              />
+            </div>
+            <div class="column">
+              <img
+                src="../../imgs/Lab/WaterRipple/WaterRipple_TexturePos.gif"
+                alt="Ripple texture position"
+              />
+            </div>
+          </div>
+          [3] Polar coordinates 노드를 사용하여 uv를 변형시킨다. 물이 흘러나오는
+          효과를 주기위해 uv offset에 시간을 곱해준다. 움직일때 텍스쳐가
+          늘어나는 효과를 주기위해 length를 반전(remap)시켜 position값에
+          곱해주었다. 즉, 원점에는 1이 곱해지고 멀어질수록 0에 가까운 값이
+          곱해진다. 즉, 외각으로 갈수록 적게 움직이게 되면서 덜 인위적이고
+          재밌는 효과가 나오게 된다.
+          <div class="image-container-two">
+            <div class="column">
+              <img
+                src="../../imgs/Lab/WaterRipple/WaterRipple_Falling.gif"
+                alt="Waterfall"
+              />
+            </div>
+            <div class="column">
+              <img
+                src="../../imgs/Lab/WaterRipple/flipbook.jpg"
+                alt="Strength"
+              />
+            </div>
+          </div>
+          [4] Flipbook을 이용하여 water splash효과를 구현했다. Vertex shader를
+          이용해 물에 약간의 움직임을 추가해주었다.
+          <div class="image-container-two">
+            <div class="column">
+              <img
+                src="../../imgs/Lab/WaterRipple/WaterWave_SineWaveFoam.gif"
+                alt="Foam"
+              />
+            </div>
+          </div>
+          [5] Scene Depth를 이용한 거품효과를 만들어 주었다.
+        </span>
+        <section class="go-to-top">
+          <a href="#top">
+            <div>&#9651;</div>
+          </a>
+          <br /><br />
+        </section>
+        <!-- <div class="empty"></div> -->
+      </article>
+      <aside>
+        <h1>Water Ripple</h1>
+        <p>
+          <span class="kor">
+            URP Shader Graph를 활용한 Water Ripple shader 입니다. <br /><br />
+            Sine, polar coordinates, flipbook이 활용되었습니다.
+            <br /><br />
+          </span>
+          <!-- A shader with 6 textures of different densities applied to a custom
+          unlit shader. -->
+        </p>
+        <p class="softwares-title">Softwares:</p>
+        <div class="grid">
+          <div class="software"><span class="unity">Unity</span></div>
+
+          <div class="software"><span class="blender">Blender</span></div>
+          <div class="software"><span class="photoshop">Photoshop</span></div>
+          <div class="software">
+            <span class="substancePainter">Substance Painter</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </body>
+</html>

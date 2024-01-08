@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is Changwoo's Portfolio Site." />
+    <meta name="keywords" content="Portfolio,3D,HTML,CSS,Shader" />
+    <title>Changwoo's Portfolio-Car Project</title>
+    <link rel="icon" type="image/x-icon" href="/images/icons/favicon-ico.ico" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y24CV8BDC9"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-Y24CV8BDC9");
+    </script>
+    <link rel="stylesheet" href="../../../css/main.css" />
+    <link rel="stylesheet" href="../../../css/SubPage.css" />
+    <link rel="stylesheet" href="../../../css/Scrollbar.css" />
+
+    <script async src="../../../js/main.js"></script>
+
+    <!-- link css -->
+  </head>
+
+  <body>
+    <div id="top"></div>
+    <header class="time-header">
+      <div class="container">
+        <div class="time-block">
+          <p class="time-text"><span id="current-time1"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time2"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time3"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time4"></span></p>
+        </div>
+      </div>
+    </header>
+
+    <div class="info-color-block">
+      <div class="info-block">
+        <p class="pName">Changwoo Hahn</p>
+        <a href="mailto:cwhxvx@gmail.com"
+          ><img src="../../../images/SVG/email_icon.svg" alt="email icon"
+        /></a>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <nav class="nav-bar">
+        <ul>
+          <li>
+            <a href="../../../index.html">Home</a>
+          </li>
+          <li>
+            <a href="../../3DPage.html">3D</a>
+          </li>
+          <li>
+            <a href="../../Game.html">Game</a>
+          </li>
+          <li>
+            <a href="../../Lab.html"><span class="current-page">Lab</span></a>
+          </li>
+          <li><a href="../../About.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <section>
+      <article class="article">
+        <div style="padding: 56.25% 0 0 0; position: relative">
+          <iframe
+            src="https://player.vimeo.com/video/900544574?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            "
+            title="Dev_02"
+          ></iframe>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+
+        <!-- <div class="portrait">
+          <img src="../../imgs/Lab/Car/TrailRenderer_Mesh_1.jpg" alt="Mesh" />
+        </div> -->
+        <div class="portrait">
+          <img
+            src="../../imgs/Lab/Car/Triangle.png"
+            alt="Custom Materials Textures"
+          />
+        </div>
+
+        <span class="kor">
+          기존 unity에 포함되어 있는 trail renderer를 사용해 봤지만 제한적인
+          부분 때문에 직접 trail renderer를 제작하게 됐다. 가장 제한되는 부분은
+          차의 기울기가 생겼을 때 이미 기록된 trail도 똑같이 회전을 한다는
+          점이다. BakeMesh를 사용하여 Parent가 없는 오브젝트에서도 trail을
+          생성해 보았지만 동일하게 모든 trail이 회전되는 것을 보아 이미 렌더링
+          된 정점도 전부 다 업데이트되는 것으로 보인다.
+
+          <br /><br />
+          이 기능의 작동 원리는 드리프트를 감지하면 그 시점부터 각각의 바퀴가
+          움직인 거리를 측정하여 특정 거리 이상 움직이면 정점을 두 개씩 추가하게
+          된다. 두 개의 정점은 마지막 포지션을 기준으로 좌우에 배치하게 되는데
+          이것은 자동차가 움직이는 방향과 local up 방향으로부터 수직인 방향을
+          외적을 통해 구하면 된다. 생성된 trail은 시간이 지나면 비활성화된
+          상태로 list&lt;GameObject&gt;에 저장되며 필요에 따라 다시 재활용된다.
+          <br /><br />
+          이 커스텀 trail renderer의 장점은 새롭게 추가된 두 개의 정점만 매번
+          list에 추가를 해서 이것을 array로 변형시킨 상태로 mesh에 정보를
+          전달했다. 이 방법으로는 이미 기록된 정점의 위치가 변하지 않는다. 또
+          다른 점은 trail마다 오브젝트로 생성되기 때문에 관리가 수월하다.
+          <br /><br />
+          <div class="portrait">
+            <img
+              src="../../imgs/Lab/Car/Trail_Ani.gif"
+              alt="Trail Animation with wireframe"
+            />
+          </div>
+          Quad 한 개의 사이즈가 작기 때문에 UV Stretch 기능을 만들었다. 생각보다
+          간단했는데 반복되길 원하는 quad의 수로 현재의 quad수를 나누어주면
+          된다. 위에는 1개의 quad마다 텍스쳐가 반복되고 아래는 10개마다
+          반복된다.
+          <br /><br />
+          <div class="portrait">
+            <img
+              src="../../imgs/Lab/Car/Trail_Transparent.jpg"
+              alt="Trail transparent"
+            />
+          </div>
+          Trail이 드리프트 정도에 따라서 투명도가 달라지도록 만들었다. 기존에
+          투명도가 없던것보다 훨씬 더 자연스러운 모습을 보여준다. Vertex
+          color값을 활용하여 texture.a * vertexColor.a 값을 shader에서 출력하게
+          된다.
+        </span>
+
+        <section class="go-to-top">
+          <a href="#top">
+            <div>&#9651;</div>
+          </a>
+          <br /><br />
+        </section>
+        <!-- <div class="empty"></div> -->
+      </article>
+      <aside>
+        <h1>Car Physics & Skid Mark</h1>
+        <p>
+          <span class="kor">
+            이번 car project에서는 자동차 물리와 타이어 자국 효과를
+            작성하였습니다. 타이어 자국 효과의 경우 유니티 기본 컴포넌트인 Trail
+            Renderer의 한계를 극복하고자 직접 의도에 맞게 처음부터 개발하기로
+            결정하였습니다. 차량 물리, 소리 부분은 아직 미흡한 부분이 많아
+            타이어 자국 효과만 우선 글을 정리했습니다.
+            <br />
+            <!-- ------------------------------------------------ -->
+            <br />
+          </span>
+        </p>
+        <p class="softwares-title">Softwares:</p>
+        <div class="grid">
+          <div class="software"><span class="unity">Unity</span></div>
+
+          <div class="software"><span class="photoshop">Photoshop</span></div>
+        </div>
+      </aside>
+    </section>
+  </body>
+</html>
