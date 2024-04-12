@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is Changwoo's Portfolio Site." />
+    <meta name="keywords" content="Portfolio,3D,HTML,CSS,Shader" />
+    <title>Blur Project</title>
+    <link rel="icon" type="image/x-icon" href="/images/icons/favicon-ico.ico" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y24CV8BDC9"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-Y24CV8BDC9");
+    </script>
+    <link rel="stylesheet" href="../../../css/main.css" />
+    <link rel="stylesheet" href="../../../css/SubPage.css" />
+    <link rel="stylesheet" href="../../../css/Scrollbar.css" />
+
+    <script async src="../../../js/main.js"></script>
+
+
+    <script> type="text/x-mathjax-config">MathJax.Hub.Config({  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+
+    <!-- link css -->
+  </head>
+
+  <body>
+    <div id="top"></div>
+    <header class="time-header">
+      <div class="container">
+        <div class="time-block">
+          <p class="time-text"><span id="current-time1"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time2"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time3"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time4"></span></p>
+        </div>
+      </div>
+    </header>
+
+    <div class="info-color-block">
+      <div class="info-block">
+        <p class="pName">Changwoo Hahn</p>
+        <a href="mailto:cwhxvx@gmail.com"
+          ><img src="../../../images/SVG/email_icon.svg" alt="email icon"
+        /></a>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <nav class="nav-bar">
+        <ul>
+          <li>
+            <a href="../../../index.html">Home</a>
+          </li>
+          <li>
+            <a href="../../3DPage.html">3D</a>
+          </li>
+          <li>
+            <a href="../../Game.html">Game</a>
+          </li>
+          <li>
+            <a href="../../Lab.html"><span class="current-page">Lab</span></a>
+          </li>
+          <li><a href="../../About.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <section>
+      <article class="article">
+      
+        <!-- <div class="portrait">
+          <img src="../../imgs/Lab/Car/TrailRenderer_Mesh_1.jpg" alt="Mesh" />
+        </div> -->
+        <span class="kor">
+          
+          <div class="image-container">
+            <img
+              src="../../imgs/Lab/Blur/BlurCompare.jpg"
+              alt="Blur Compare"
+            />
+          </div>
+          
+
+          특별히 특정 blur가 더 좋다고 하긴 힘들지만 두 블러의 차이점은 명확하다.
+          Box Blur는 더 뿌옇고 그대신 성능면에서 더 유리하고 Gaussian blur의 경우 더 선명하지만 그만큼 더 많은 성능을 요구한다.
+          Box Blur는 가중치가 균등하고  Gaussian filter의 
+          가중치는 가운데가 가장 높기 때문에 블러가 제대로 구현된것을 확인해 볼 수 있다.
+          Gaussian blur를 구현하기 위해서 아래의 공식이 사용되었다.
+          <br />
+
+          $$G(x,y) = \frac{1}{2\pi \sigma^2 }e^{-\frac{x^2+y^2}{2\sigma^2}} $$
+          Hlsl에서 블러의 가중치를 저장하기 위해서 weightData[][]와 같이 다차원 배열을 사용해봤으나 성능적인 문제 때문인지
+          계속 오류가 떠서 진행을 할 수 없었다. 
+          결국 찾아낸 방법은 c#에서 gaussian blur의 정규화된 가중치를 구한다음 그 값을 텍스쳐에 저장시키는 방법이었다. 
+          아래는 가중치가 저장된 텍스쳐들을 비교하기 위해 모아둔 것이다.
+          <div class="image-container">
+            <img
+              src="../../imgs/Lab/Blur/GBlurWeight.jpg"
+              alt="Gaussian Blur Weight"
+            />
+          </div>
+          <br />
+          RFloat 텍스쳐 포맷을 사용하였기 때문에 텍스쳐는 R채널 값만 보이게 된다. 가로축은 sigma 값이 점차 증가하면서 가운데에 집중되었던 
+          가중치가 고르게 분포되는 것을 볼 수 있다. 세로축은 kernel 사이즈의 변화를 보여주며 커질수록 참고하는 주변 
+          픽셀의 범위가 넓어지는 것을 볼 수 있다.
+          두 개의 값은 모두 커질 수록 블러의 강도가 세진다는 것을 알 수 있다. 
+          <br /><br />
+
+          기본 방법을 쓰기보다 게임에서는 더 최적화된 방법을 사용하는 것같다. 그 중 가장 대중적인 방법은 
+          가로와 세로축의 픽셀만 참고하고 대각선 부분을 포기하는 방식이다.
+          
+        </span>
+
+        <section class="go-to-top">
+          <a href="#top">
+            <div>&#9651;</div>
+          </a>
+          <br /><br />
+        </section>
+        <!-- <div class="empty"></div> -->
+      </article>
+      <aside>
+        <h1>Blur</h1>
+        <p>
+          <span class="kor">
+            Blur 프로젝트에서는 Box Blur와 Gaussian Blur에 대해 공부해볼 수 있었습니다. Kernel개념, 블러간의 차이, 그리고 게임에서 블러를 사용하기 위한 최적화 방법을 알 수 있었습니다.
+            <br />
+            <!-- ------------------------------------------------ -->
+            <br />
+          </span>
+        </p>
+        <p class="softwares-title">Softwares:</p>
+        <div class="grid">
+          <div class="software"><span class="unity">Unity</span></div>
+
+          <div class="software"><span class="photoshop">Photoshop</span></div>
+        </div>
+      </aside>
+    </section>
+  </body>
+</html>

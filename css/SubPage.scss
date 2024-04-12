@@ -126,7 +126,12 @@ aside {
   position: relative;
   padding: 56.25% 0 0 0;
 }
-
+.image-container-fixed
+{
+  position : relative;
+  aspect-ratio: 9/16;
+  width: 100%;
+}
 .portrait {
   position: relative;
   //border: 2px solid rgb(233, 0, 39);
