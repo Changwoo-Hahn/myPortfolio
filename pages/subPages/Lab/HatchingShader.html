@@ -112,7 +112,9 @@
 
         <p>
           <span class="kor">
-            1. Noise 패턴 만들기. <br />2. Blur 적용하기.<br />
+            <b>Hatching Noise 만들기</b><br />
+            1. Noise 패턴 만들기. <br />
+            2. Blur 적용하기.<br />
             3. Contrast 조절하여 다른 밀도의 texture 만들기
           </span>
         </p>
@@ -133,8 +135,18 @@
         </div>
         <p>
           <span class="kor">
-            Colorspace Conversion노드를 통해 RGB에서 HSV로 변환시켜 준다. Value
-            값에 알맞게 hatching 텍스쳐를 서로 조금씩 겹치게 적용해준다.
+            Colorspace Conversion노드를 통해 RGB에서 HSV로 변환시켜 준다. HSV의 value(명도) 값은 결국 오브젝트의 밝기를 0~1로 표현하기 때문에 value값의 
+            범위를 조금씩 겹치게 정하고 그에 해당하는 hatching 텍스쳐를 적용해준다.
+            
+            <br><br>
+            이 셰이더는 uv space 기반이기 때문에 명확한 단점이 있는데 uv 좌표에 따라 패턴이 균등하지 않다는 점이다. 이것을 균등하게 보여주기 
+            위한 방법으로는 여러가지 있겠지만 가장 간단한 방법은 screen space 기반으로 만드는 것일 것이다. Lucas Pope가 개발한 게임 Obra Dinn을 위해
+            구현한 방법중 하나는 screen space에 투영된 패턴을 카메라의 각도에 따라 offset을 변경하는 방식이 있다. 최종적으로 사용된 방식은 world space에서
+            최대한 구형태에 가깝게 매핑을 했다고 하는데 구체적인 설명은 써있지 않다. 하지만 이렇게 post processing 단계에서 매핑을 하는 것이 
+            가장 이상적인 방법이라는 것을 알 수 있었다.
+
+         
+
           </span>
         </p>
         <section class="go-to-top">
@@ -151,6 +163,18 @@
           <span class="kor">
             6개의 밀도를 가진 텍스쳐를 적용하여 만든 쉐이더입니다. HLSL코드와
             shader graph를 이용하여 만들었습니다.
+
+
+            <br />
+            ------------------------------------------------
+            <br />
+
+            <br />
+            ------------------------------------------------
+            <br />
+            <b>참고문헌</b>
+            <br />
+            <a href="https://www.youtube.com/watch?v=DOLE4nrK97g">Learn stylized shading with Shader Graph</a>
           </span>
           <!-- A shader with 6 textures of different densities applied to a custom
           unlit shader. -->
