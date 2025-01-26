@@ -128,8 +128,8 @@
     height: calc(100% - 33px);
     object-fit: cover;
     border-radius: 0.2em 0.2em 0 0;
-
   }
+  
   .thumbnail-text-box {
     //background-color: rgb(218, 23, 23); //var(--primary-yellow);
     box-sizing: border-box;
@@ -184,7 +184,7 @@
     width: 30em;
     //left:50%;
     margin: auto;
-    font-size: 0.83em;
+    font-size: 0.93em;
     p {
       text-align: justify;
     }
