@@ -103,12 +103,12 @@
             />
           </div>
           
-
+          Blur 프로젝트에서는 Box Blur와 Gaussian Blur에 대해 구현해보고 특히 Gaussian Blur의 수식을 코드로 변환하여 구현해 보는 것이 목표였다.
           특별히 특정 blur가 더 좋다고 하긴 힘들지만 두 블러의 차이점은 명확하다.
           Box Blur는 더 뿌옇고 그대신 성능면에서 더 유리하고 Gaussian blur의 경우 더 선명하지만 그만큼 더 많은 성능을 요구한다.
           Box Blur는 가중치가 균등하고  Gaussian filter의 
           가중치는 가운데가 가장 높기 때문에 블러가 제대로 구현된것을 확인해 볼 수 있다.
-          Gaussian blur를 구현하기 위해서 아래의 공식이 사용되었다.
+          비록 게임에는 그대로 보통 사용되지는 않지만 Gaussian blur를 구현하기 위해서 아래의 공식이 사용되었다.
           <br />
 
           $$G(x,y) = \frac{1}{2\pi \sigma^2 }e^{-\frac{x^2+y^2}{2\sigma^2}} $$
@@ -148,7 +148,8 @@
         <h1>Blur</h1>
         <p>
           <span class="kor">
-            Blur 프로젝트에서는 Box Blur와 Gaussian Blur에 대해 공부해볼 수 있었습니다. Kernel개념, 블러간의 차이, 그리고 게임에서 블러를 사용하기 위한 최적화 방법을 알 수 있었습니다.
+            Blur 프로젝트에서는 Box Blur와 Gaussian Blur에 대해 공부해볼 수 있었습니다. 
+            Kernel개념, 블러간의 차이, 그리고 게임에서 블러를 사용하기 위한 최적화 방법을 알 수 있었습니다.
             <br />
             <!-- ------------------------------------------------
 
