@@ -6,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="This is Changwoo's Portfolio Site." />
     <meta name="keywords" content="Portfolio,3D,HTML,CSS,Shader" />
-    <title>Custom Material</title>
+    <title>Outlines Project</title>
     <link rel="icon" type="image/x-icon" href="/images/icons/favicon-ico.ico" />
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-Y24CV8BDC9"
     ></script>
+
+    <!-- <script src="https://pastebin.com/embed_js/bHGez2tj?theme=dark"></script>
+    <script src="https://pastebin.com/embed_js/bHGez2tj"></script> -->
+    <!--Math ========================================= -->
+    <script> type="text/x-mathjax-config">MathJax.Hub.Config({  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+    <!--============================================== -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -26,6 +33,9 @@
     <link rel="stylesheet" href="../../../css/Scrollbar.css" />
 
     <script async src="../../../js/main.js"></script>
+
+
+    
 
     <!-- link css -->
   </head>
@@ -80,47 +90,49 @@
 
     <section>
       <article class="article">
-        <div style="padding: 56.25% 0 0 0; position: relative">
-          <iframe
-            src="https://player.vimeo.com/video/875944327?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            style="
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-            "
-            title="Unity Custom Materials"
-          ></iframe>
-        </div>
-        <script src="https://player.vimeo.com/api/player.js"></script>
-
-        <div class="portrait">
-          <img
-            src="../../imgs/Lab/CustomMaterial/Materials.jpg"
-            alt="Custom Materials"
-          />
-        </div>
-        <span class="kor">
-        이 커스텀 메테리얼의 핵심은 UV를 변형시키는 것이다.
-        위의 예시는 <b>float2(NdotViewDir, halfNdotL)</b> 형식으로 설정되어있다. X 축만 보면 fresnel공식이기 때문에 텍스쳐의 x좌표가 0에
-        가까울 수록 구의 외곽 색을 결정한다. Y축을 보면 빛과 마주볼수록 1에 가까운 값을 주기 때문에 텍스쳐의 상단부분이 빛과 마주보는 면의 색을 결정한다.
-        즉, mesh의 가장 밝은 부분은 텍스쳐의 우측상단의 색이 표현된다.
-        <br><br>
-        굉장히 간단한 방법이지만 이러한 셰이더로 자동차 페인트나, 코팅된 카드와 같이 다양한 색이 공존하는 재질을 만드는데 유용할 것 같다.
+    
+      <span class="kor">
         
+      <b>Blur Outline</b>
+      <br />
+      Blur Outline에서는 box blur와 gaussian blur를 활용하여 두 가지 방식으로 구현해 보았다. 두꺼운 아웃라인의 경우 확연히 차이가 나는데 
+      gaussian 방식의 경우 확실히 더 자연스러운 blur를 만들어낸다. 얇은 두께 1~5 정도면 사실 크게 체감이 될정도는 아니라서 box blur방식으로도 충분히 괜찮아 보였다.
+      <div class="portrait">
+        <img src="../../imgs/Lab/Outlines/BlurOutlineExamples.png" alt="Shader Particle Example" />
+      </div>
+      <br />
 
-        </span>
-        <div class="portrait">
-          <img
-            src="../../imgs/Lab/CustomMaterial/Materials_Textures.jpg"
-            alt="Custom Materials Textures"
-          />
-        </div>
+      <b>Edge Detection Outline</b>
+      <br />
+      Roberts Cross, Sobel을 활용하여 Edge Detection을 구현해보았다.
+      오브젝트 내부 및 노멀까지 적용 가능한 방식이다. 얇은 아웃라인인과 내부 아웃라인을 생성할때 
+      가장 이상적인 방식이라고 생각된다. Roberts 방식과 sobel에는 거의 차이가 없어보이며 Sample이 더 적은 roberts cross 방식으로도 충분해 보인다.
+      (아래는 Roberts Cross 예시)
+      
+      <div class="portrait">
+        <img src="../../imgs/Lab/Outlines/EdgeDetectionOutlineExamples.png" alt="Edge detection example" />
+      </div>
+      <br />
 
-        
+      두께가 두꺼워지면 쉽게 망가지는 것을 볼 수 있다.
+      <div class="portrait">
+        <img src="../../imgs/Lab/Outlines/EdgeDetectionOutlineExamples_2.png" alt="Edge detection example" />
+      </div>
+
+      <b>Hull Outline</b>
+      <br />
+      WIP
+      <br /><br />
+      <b>Jump Flood Outline</b>
+      <br />
+      WIP
+      
+      <br />
+
+
+      </span>
+
+
         <section class="go-to-top">
           <a href="#top">
             <div>&#9651;</div>
@@ -130,34 +142,28 @@
         <!-- <div class="empty"></div> -->
       </article>
       <aside>
-        <h1>Custom Material</h1>
+        <h1>Outlines</h1>
         <p>
           <span class="kor">
-            HLSL코드로 작성된 셰이더 입니다. <br /><br />
-            Directional Light 한 개만 적용된 이미지이며 Albedo 와 Normal
-            Texture가 사용되었습니다. Matcap과는 다르게 카메라를 항상 바라보지
-            않고 Directional Light방향과 view direction의 영향을 전부 받습니다.
-            텍스쳐 한장으로 rim light 혹은 여러 빛을 반사하는 것과 같은 효과를
-            줄 수 있는 장점이 있습니다.
+            Outlines 프로젝트는 여러가지 종류의 outline을 테스트해보고 장단점을 파악하고자 진행되었습니다.
+            HLSL과 SRP를 활용하여 작성되었습니다.
             <br />
             <!-- ------------------------------------------------
-            <br />
-            <b>프로젝트 코드</b><br />
-            <a href="https://pastebin.com/X4yt8xTC">Custom Material HLSL</a>
+
             <br /> -->
+            <!-- <b>프로젝트 코드</b> <br>
+            <a href="https://pastebin.com/KpmUJGQP">Blur C# code</a><br />
+            <a href="https://pastebin.com/bHGez2tj">Blur HLSL code</a><br /> -->
             ------------------------------------------------
-            <br />
-            <b>참고문헌</b><br />
-            <a href="https://www.textures.com/">Normal Texture</a>
+            <b>참고문헌</b><br>
+            <!-- <a href="https://www.pixelstech.net/article/1353768112-Gaussian-Blur-Algorithm">Gaussian Blur Algorithm</a><br /> -->
+
           </span>
-          <!-- A shader with 6 textures of different densities applied to a custom
-          unlit shader. -->
         </p>
         <p class="softwares-title">Softwares:</p>
         <div class="grid">
           <div class="software"><span class="unity">Unity</span></div>
-
-          <div class="software"><span class="photoshop">Photoshop</span></div>
+          <div class="software"><span class="blender">Blender</span></div>
         </div>
       </aside>
     </section>
