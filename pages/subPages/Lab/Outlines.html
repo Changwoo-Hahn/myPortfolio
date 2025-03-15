@@ -96,8 +96,9 @@
       <b>Blur Outline</b>
       <br />
       Blur Outline에서는 box blur와 gaussian blur를 활용하여 두 가지 방식으로 구현해 보았다. 두꺼운 아웃라인의 경우 확연히 차이가 나는데 
-      gaussian 방식의 경우 확실히 더 자연스러운 blur를 만들어낸다. 얇은 두께 1~5 정도면 사실 크게 체감이 될정도는 아니라서 box blur방식으로도 충분히 괜찮아 보였다.
+      gaussian 방식의 경우 확실히 더 자연스러운 blur를 만들어낸다. 하지만 두께를 넓히기에는 결국 샘플링되는 수가 너무 크게 증가해서 사용하기 쉽지 않아보인다. 얇은 두께 1~5 정도면 사실 크게 체감이 될정도는 아니라서 box blur방식으로도 충분히 괜찮아 보였다.
       <br />이 방식의 한계는 오브젝트가 겹쳐있으면 오브젝트 개별적으로 아웃라인이 생성되지 않고 겹쳐진부분이 무시된 상태에서 아웃라인이 생성된다는 점이다.
+      오브젝트별로 랜덤한 id를 색으로 부여하면 이 문제를 해결할 수 있을 것같은데 아직 시도해보지 않았다.
       
       <div class="portrait">
         <img src="../../imgs/Lab/Outlines/BlurOutlineExamples.png" alt="Shader Particle Example" />
