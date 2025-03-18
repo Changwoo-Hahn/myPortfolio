@@ -114,8 +114,8 @@
           $$G(x,y) = \frac{1}{2\pi \sigma^2 }e^{-\frac{x^2+y^2}{2\sigma^2}} $$
           HLSL에서 블러의 가중치를 저장하기 위해서 weightData[][]와 같이 다차원 배열을 사용해봤으나 성능적인 문제 때문인지
           계속 오류가 떠서 진행을 할 수 없었다. 
-          결국 찾아낸 방법은 c#에서 gaussian blur의 정규화된 가중치를 구한다음 그 값을 텍스쳐에 저장시키는 방법이었다. 
-          아래는 가중치가 저장된 텍스쳐들을 비교하기 위해 모아둔 것이다.
+          아래는 c#에서 gaussian blur의 정규화된 가중치를 구한다음 그 값을 텍스쳐에 저장한 것이다. 
+          가중치가 저장된 텍스쳐들을 비교하기 위해 모아둔 것이다.
           <div class="image-container">
             <img
               src="../../imgs/Lab/Blur/GBlurWeight.jpg"
