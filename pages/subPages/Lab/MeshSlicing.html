@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is Changwoo's Portfolio Site." />
+    <meta name="keywords" content="Portfolio,3D,HTML,CSS,Shader" />
+    <title>Blur Project</title>
+    <link rel="icon" type="image/x-icon" href="/images/icons/favicon-ico.ico" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y24CV8BDC9"
+    ></script>
+
+    <!-- <script src="https://pastebin.com/embed_js/bHGez2tj?theme=dark"></script>
+    <script src="https://pastebin.com/embed_js/bHGez2tj"></script> -->
+    <!--Math ========================================= -->
+    <script> type="text/x-mathjax-config">MathJax.Hub.Config({  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+    <!--============================================== -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-Y24CV8BDC9");
+    </script>
+    <link rel="stylesheet" href="../../../css/main.css" />
+    <link rel="stylesheet" href="../../../css/SubPage.css" />
+    <link rel="stylesheet" href="../../../css/Scrollbar.css" />
+
+    <script async src="../../../js/main.js"></script>
+
+
+    
+
+    <!-- link css -->
+  </head>
+
+  <body>
+    <div id="top"></div>
+    <header class="time-header">
+      <div class="container">
+        <div class="time-block">
+          <p class="time-text"><span id="current-time1"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time2"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time3"></span></p>
+        </div>
+        <div class="time-block">
+          <p class="time-text"><span id="current-time4"></span></p>
+        </div>
+      </div>
+    </header>
+
+    <div class="info-color-block">
+      <div class="info-block">
+        <p class="pName">Changwoo Hahn</p>
+        <a href="mailto:cwhxvx@gmail.com"
+          ><img src="../../../images/SVG/email_icon.svg" alt="email icon"
+        /></a>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <nav class="nav-bar">
+        <ul>
+          <li>
+            <a href="../../../index.html">Home</a>
+          </li>
+          <li>
+            <a href="../../3DPage.html">3D</a>
+          </li>
+          <li>
+            <a href="../../Game.html">Game</a>
+          </li>
+          <li>
+            <a href="../../Lab.html"><span class="current-page">Lab</span></a>
+          </li>
+          <li><a href="../../About.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <section>
+      <article class="article">
+      
+        <!-- <div class="portrait">
+          <img src="../../imgs/Lab/Car/TrailRenderer_Mesh_1.jpg" alt="Mesh" />
+        </div> -->
+        <span class="kor">
+          
+          <div class="portrait">
+            <img
+              src="../../imgs/Lab/MeshSlicing/MeshSlicing_01.png"
+              alt="Mesh Slicing Example"
+            />
+          </div>
+          
+          Mesh Slicing 프로젝트에서는 Mesh를 특정 평면을 기준으로 자르고 단면을 채우는 기능을 구현했습니다.
+          실시간으로 자르는 것을 목표로 구현하였고 최대한 다양한 타입의 오브젝트를 자를 수 있도록 했습니다.
+          <br />
+          <br />
+           <table style="max-width: 100%;">
+          <!-- <tr>
+            <td class="first-cell"> Mask Type </td>
+            <td class="head-cell"> Blending 미적용 </td>
+            <td class="head-cell"> World </td>
+            <td class="head-cell"> Texture </td>
+          </tr> -->
+          <tr>
+            
+            <td><img src="../../imgs/Lab/MeshSlicing/MeshSlicing_02.png" alt="Blending Default"></td>
+            <td><img src="../../imgs/Lab/MeshSlicing/MeshSlicing_03.png" alt="Blending World"></td>
+            <td><img src="../../imgs/Lab/MeshSlicing/MeshSlicing_04.png" alt="Blending World"></td>
+          </tr>
+          <tr>
+          
+            <td><img src="../../imgs/Lab/MeshSlicing/MeshSlicing_05.png" alt="Blending World Mask"></td>
+            <td><img src="../../imgs/Lab/MeshSlicing/MeshSlicing_06.png" alt="Blending Texture Mask"></td>
+          </tr>
+        </table>
+
+         
+          <br />
+
+          개선해야하는 점도 있는데 Mesh에 두개 이상의 구멍이 있는 경우에 대해서는 현재 제한되고 개선중에 있습니다.
+          <div class ="image-container" style="max-height: 290px;">
+          <img 
+          src="../../imgs/Lab/MeshSlicing/MeshSlicing_07.png" 
+          alt="Mesh Slicing Diagram" 
+          />
+          </div>
+         
+          
+        </span>
+
+
+        <section class="go-to-top">
+          <a href="#top">
+            <div>&#9651;</div>
+          </a>
+          <br /><br />
+        </section>
+        <!-- <div class="empty"></div> -->
+      </article>
+      <aside>
+        <h1>Mesh Slicing</h1>
+        <p>
+          <span class="kor">
+            Mesh를 자르고 잘린부분을 채우는 방식을 구현. 
+            <br />
+            <!-- ------------------------------------------------
+
+            <br /> -->
+            <!-- <b>프로젝트 코드</b> <br>
+            <a href="https://pastebin.com/KpmUJGQP">Blur C# code</a><br />
+            <a href="https://pastebin.com/bHGez2tj">Blur HLSL code</a><br /> -->
+            ------------------------------------------------
+            <b>참고문헌</b><br>
+            <a href="https://www.geometrictools.com/Documentation/TriangulationByEarClipping.pdf">Ear Clipping Algorithm</a><br />
+
+          </span>
+        </p>
+        <p class="softwares-title">Softwares:</p>
+        <div class="grid">
+          <div class="software"><span class="unity">Unity</span></div>
+
+          <div class="software"><span class="photoshop">Photoshop</span></div>
+        </div>
+      </aside>
+    </section>
+  </body>
+</html>
